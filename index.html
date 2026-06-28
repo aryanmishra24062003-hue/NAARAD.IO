@@ -236,7 +236,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(249,241,220,
 #page-planner{flex-direction:column;overflow:hidden}
 
 /* Mode toggle bar */
-.planner-modebar{display:flex;align-items:center;gap:0;background:#172752;padding:0;border-bottom:2px solid rgba(255,255,255,.1);flex-shrink:0;z-index:10}
+.planner-modebar{position:fixed;top:68px;left:0;right:0;z-index:199;min-height:48px;display:flex;align-items:center;gap:0;background:#172752;padding:0;border-bottom:2px solid rgba(255,255,255,.1)}
 .planner-modebar .pm-logo{padding:14px 20px;display:flex;align-items:center;gap:10px;border-right:1px solid rgba(255,255,255,.15)}
 .planner-modebar .pm-logo img{width:32px;height:32px;object-fit:contain;filter:brightness(1.2)}
 .planner-modebar .pm-logo span{color:white;font-weight:700;font-size:15px;letter-spacing:.3px}
@@ -250,24 +250,38 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(249,241,220,
 .pm-search-wrap input:focus{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.4)}
 
 /* ── PLAN MODE ── */
-#page-planner.active{display:flex!important;flex-direction:column;height:calc(100dvh - 68px);margin-top:68px;box-sizing:border-box;overflow:hidden;padding-top:0}
+#page-planner.active{display:flex!important;flex-direction:column;height:calc(100dvh - 68px);margin-top:68px;box-sizing:border-box;overflow:hidden;padding-top:48px}
 #pmode-discover{display:none;flex-direction:column;flex:1;min-height:0;overflow:hidden}
 #pmode-discover.active{display:flex}
+#pmode-plan{display:none;flex:1;min-height:0;overflow:hidden}
+#pmode-plan.active{display:flex}
+.plan-split{display:flex;flex:1;min-height:0;overflow:hidden}
+#plan-map{flex:1;min-height:0;position:relative;z-index:1}
 
-/* Activity bar (plan mode) */
-.act-chip .act-ico{font-size:14px}
-
-/* Plan split layout */
+/* Planner panel */
+.planner-panel{width:320px;flex-shrink:0;display:flex;flex-direction:column;background:#fff;border-right:1px solid #E2DDD4;overflow-y:auto;padding:24px;box-shadow:2px 0 12px rgba(0,0,0,.06)}
+.pp-title{font-size:16px;font-weight:700;color:#1A1A2E;margin:0 0 6px}
+.pp-hint{font-size:13px;color:#6B6B7B;margin:0 0 16px;line-height:1.5}
+.wp-list{display:flex;flex-direction:column;gap:6px;margin-bottom:12px;min-height:40px}
+.wp-empty{font-size:13px;color:#B0AAA0;text-align:center;padding:20px 0}
+.wp-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;border:1.5px solid #E2DDD4;background:white}
 .wp-item:hover{border-color:#1E3161}
 .wp-item.active{border-color:#E8641A;background:#FFF0E6}
-.wp-dot.start{background:#22c55e;color:white}
-.wp-dot.end{background:#E8641A;color:white}
-.wp-dot.mid{background:#1E3161;color:white}
+.wp-dot{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;color:white}
+.wp-dot.start{background:#22c55e}
+.wp-dot.end{background:#E8641A}
+.wp-dot.mid{background:#1E3161}
+.wp-label{flex:1;font-size:13px;font-weight:600;color:#1A1A2E}
 .wp-label span{display:block;font-size:11px;color:#6B6B7B;font-weight:400}
+.wp-del{background:none;border:none;color:#C8C2B8;cursor:pointer;font-size:18px;line-height:1;padding:2px 4px;transition:color .2s;font-family:sans-serif}
 .wp-del:hover{color:#E8641A}
 .wp-add-btn{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;border:1.5px dashed #E2DDD4;background:none;color:#6B6B7B;font-size:13px;cursor:pointer;width:100%;font-family:'Inter',sans-serif;transition:all .2s;margin-bottom:6px}
 .wp-add-btn:hover{border-color:#1E3161;color:#1E3161;background:#F4F6FF}
-.prt-btn:hover{border-color:#1E3161}
+.pp-actions{display:flex;gap:8px;margin-top:auto;padding-top:16px;border-top:1px solid #F0EDE4}
+.prt-btn{flex:1;padding:10px;border-radius:10px;border:1.5px solid #E2DDD4;background:white;color:#1A1A2E;font-size:13px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
+.prt-btn:hover{border-color:#1E3161;color:#1E3161}
+.pp-export-btn{background:#1E3161;color:white;border-color:#1E3161}
+.pp-export-btn:hover{background:#172752;border-color:#172752;color:white}
 
 /* Map containers */
 #disc-map{flex:1;min-height:0;position:relative;z-index:1}
@@ -1334,9 +1348,8 @@ footer{background:var(--nv);color:white;padding:68px 32px 28px}
   /* Planner page fills viewport on mobile */
   #page-planner.active {
     display: flex; flex-direction: column;
-    height: calc(100dvh - 68px); overflow: hidden; padding-bottom: 0;
+    height: calc(100dvh - 68px); overflow: hidden; padding-top: 48px; padding-bottom: 0;
   }
-  .planner-modebar { flex-shrink: 0; }
   #pmode-discover { flex: 1; min-height: 0; display: flex; flex-direction: column; }
 
   /* Plan split: map fills 100%, panel floats as bottom sheet */
@@ -1826,7 +1839,8 @@ if ('serviceWorker' in navigator) {
       <img src="LOGO_PLACEHOLDER" alt="Naarad"/>
       <span>Naarad</span>
     </div>
-    <button class="pmtab active" id="pmtab-discover">Discover Routes</button>
+    <button class="pmtab active" id="pmtab-discover" onclick="switchPlannerMode('discover')">Discover Routes</button>
+    <button class="pmtab" id="pmtab-plan" onclick="switchPlannerMode('plan')">Plan Route</button>
     <div class="pm-spacer"></div>
     <div class="pm-search-wrap" role="search" aria-label="Search heritage sites">
       <svg width="15" height="15" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -1868,6 +1882,33 @@ if ('serviceWorker' in navigator) {
       <div id="disc-map">
         <div id="gpx-track-strip"></div>
       </div>
+    </div>
+  </div>
+
+  <!-- ══ PLAN MODE ══ -->
+  <div id="pmode-plan">
+    <div class="plan-split">
+
+      <!-- Left: Planner Panel -->
+      <div class="planner-panel" role="complementary" aria-label="Route planner">
+        <h3 class="pp-title">Plan Your Route</h3>
+        <p class="pp-hint">Click anywhere on the map to add waypoints. Build your custom heritage journey.</p>
+        <div class="wp-list" id="wp-list">
+          <p class="wp-empty" id="wp-empty">No waypoints yet — click the map to begin.</p>
+        </div>
+        <button class="wp-add-btn" id="wp-add-btn" onclick="setPlanMapClickMode(true)" aria-label="Add waypoint by clicking map">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+          Add Waypoint
+        </button>
+        <div class="pp-actions">
+          <button class="prt-btn" onclick="clearPlanRoute()" aria-label="Clear all waypoints">Clear</button>
+          <button class="prt-btn pp-export-btn" onclick="exportPlanGPX()" aria-label="Export route as GPX">Export GPX</button>
+        </div>
+      </div>
+
+      <!-- Right: Map -->
+      <div id="plan-map" aria-label="Route planning map"></div>
+
     </div>
   </div>
 
@@ -2316,6 +2357,108 @@ let highlightedRoute = null;
 let discPolylines = {};
 
 // ── Mode switch ────────────────────────────────────────────────────────────
+window.switchPlannerMode = function switchPlannerMode(mode) {
+  ['discover','plan'].forEach(m => {
+    document.getElementById('pmtab-' + m).classList.toggle('active', m === mode);
+    document.getElementById('pmode-' + m).classList.toggle('active', m === mode);
+  });
+  if (mode === 'plan' && !planMap) setTimeout(initPlanMap, 80);
+  if (mode === 'discover' && discMap) discMap.invalidateSize();
+}
+
+// ── PLAN MAP ────────────────────────────────────────────────────────────────
+let planMap = null;
+let planWaypoints = [];
+let planPolyline = null;
+let planClickMode = false;
+
+function initPlanMap() {
+  planMap = L.map('plan-map', {zoomControl:false}).setView([20.5937, 78.9629], 5);
+  L.control.zoom({position:'bottomright'}).addTo(planMap);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom:18
+  }).addTo(planMap);
+  planMap.on('click', function(e) {
+    if (planClickMode) addPlanWaypoint(e.latlng);
+  });
+}
+
+window.setPlanMapClickMode = function setPlanMapClickMode(on) {
+  planClickMode = on;
+  const btn = document.getElementById('wp-add-btn');
+  if (btn) btn.style.borderColor = on ? '#1E3161' : '';
+  if (planMap) planMap.getContainer().style.cursor = on ? 'crosshair' : '';
+}
+
+function addPlanWaypoint(latlng) {
+  const idx = planWaypoints.length;
+  const dotClass = idx === 0 ? 'start' : 'end';
+  const label = idx === 0 ? 'Start' : 'Stop ' + idx;
+  const icon = L.divIcon({
+    html: `<div style="background:${idx===0?'#22c55e':'#E8641A'};color:white;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;box-shadow:0 2px 8px rgba(0,0,0,.3);border:2px solid white">${idx+1}</div>`,
+    iconSize:[26,26], iconAnchor:[13,13], className:''
+  });
+  const marker = L.marker(latlng, {icon, draggable:true}).addTo(planMap);
+  marker.on('dragend', function() { planWaypoints[idx].latlng = marker.getLatLng(); drawPlanLine(); });
+  planWaypoints.push({latlng, label, marker, dotClass});
+  drawPlanLine();
+  renderWaypointList();
+  setPlanMapClickMode(false);
+}
+
+function drawPlanLine() {
+  if (planPolyline) planMap.removeLayer(planPolyline);
+  if (planWaypoints.length < 2) return;
+  planPolyline = L.polyline(planWaypoints.map(w => w.latlng), {color:'#1E3161', weight:3, dashArray:'6 4'}).addTo(planMap);
+}
+
+function renderWaypointList() {
+  const list = document.getElementById('wp-list');
+  if (!planWaypoints.length) {
+    list.innerHTML = '<p class="wp-empty" id="wp-empty">No waypoints yet — click the map to begin.</p>';
+    return;
+  }
+  const items = planWaypoints.map((w, i) => {
+    const cls = i === 0 ? 'start' : i === planWaypoints.length - 1 ? 'end' : 'mid';
+    return `<div class="wp-item" id="wp-item-${i}">
+      <div class="wp-dot ${cls}">${i + 1}</div>
+      <div class="wp-label">${w.label}<span>${w.latlng.lat.toFixed(4)}, ${w.latlng.lng.toFixed(4)}</span></div>
+      <button class="wp-del" onclick="removePlanWaypoint(${i})" aria-label="Remove waypoint ${i + 1}">×</button>
+    </div>`;
+  }).join('');
+  list.innerHTML = items;
+}
+
+window.removePlanWaypoint = function removePlanWaypoint(idx) {
+  planMap.removeLayer(planWaypoints[idx].marker);
+  planWaypoints.splice(idx, 1);
+  drawPlanLine();
+  renderWaypointList();
+}
+
+window.clearPlanRoute = function clearPlanRoute() {
+  planWaypoints.forEach(w => planMap.removeLayer(w.marker));
+  planWaypoints = [];
+  if (planPolyline) { planMap.removeLayer(planPolyline); planPolyline = null; }
+  renderWaypointList();
+}
+
+window.exportPlanGPX = function exportPlanGPX() {
+  if (planWaypoints.length < 2) { alert('Add at least 2 waypoints to export a route.'); return; }
+  const pts = planWaypoints.map((w,i) =>
+    `    <wpt lat="${w.latlng.lat.toFixed(6)}" lon="${w.latlng.lng.toFixed(6)}"><name>${w.label}</name></wpt>`
+  ).join('\n');
+  const trkpts = planWaypoints.map(w =>
+    `      <trkpt lat="${w.latlng.lat.toFixed(6)}" lon="${w.latlng.lng.toFixed(6)}"/>`
+  ).join('\n');
+  const gpx = `<?xml version="1.0"?>\n<gpx version="1.1" creator="Naarad.IO">\n${pts}\n  <trk><name>My Naarad Route</name><trkseg>\n${trkpts}\n  </trkseg></trk>\n</gpx>`;
+  const a = document.createElement('a');
+  a.href = 'data:application/gpx+xml,' + encodeURIComponent(gpx);
+  a.download = 'naarad-route.gpx';
+  a.click();
+}
+
 // ── DISCOVER MAP ───────────────────────────────────────────────────────────
 function initDiscoverMap() {
   discMap = L.map('disc-map', {zoomControl:false}).setView([20.5937, 78.9629], 5);
@@ -2543,8 +2686,10 @@ window.handlePlannerSearch = function(val) {};
 window.geocodePlannerSearch = function() {
   const val = document.getElementById('pm-location-input').value.trim();
   if (!val) return;
-  // Find matching route
   const match = ROUTES.find(r => r.name.toLowerCase().includes(val.toLowerCase()) || r.location.toLowerCase().includes(val.toLowerCase()));
+  if (match) {
+    if (planMap) { planMap.setView([match.lat, match.lng], 13); }
+    else if (discMap) { discMap.setView([match.lat, match.lng], 13); selectDiscoverRoute(match.id); }
   } else if (discMap) {
     const m2 = ROUTES.find(r => r.name.toLowerCase().includes(val.toLowerCase()) || r.location.toLowerCase().includes(val.toLowerCase()));
     if (m2) { discMap.setView([m2.lat, m2.lng], 13); selectDiscoverRoute(m2.id); }
@@ -2813,6 +2958,7 @@ function switchTab(rid, tab, btn) {
     var vid = document.getElementById('hero-video');
     if (vid) { vid.src = videoUrl; vid.play().catch(function(){}); }
   }
+})();
 </script>
 
 <!-- ══ ROUTE PAGE: HAMPI ══ -->
@@ -4388,6 +4534,7 @@ function switchTab(rid, tab, btn) {
     var chips = null;
     var active = document.activeElement;
     if (!active) return;
+    if (active.closest('.act-chip')) {
       chips = Array.from(document.querySelectorAll('.act-chip'));
     } else if (active.closest('.disc-act-chips')) {
       chips = Array.from(document.querySelectorAll('.disc-chip'));
