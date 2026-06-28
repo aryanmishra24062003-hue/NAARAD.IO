@@ -234,7 +234,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(249,241,220,
 
 /* Shared planner layout */
 #page-planner{flex-direction:column;overflow:hidden}
-#page-planner.active{display:flex!important;height:calc(100vh - 68px);padding-top:0}
 
 /* Mode toggle bar */
 .planner-modebar{display:flex;align-items:center;gap:0;background:#172752;padding:0;border-bottom:2px solid rgba(255,255,255,.1);flex-shrink:0;z-index:10}
@@ -251,63 +250,29 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(249,241,220,
 .pm-search-wrap input:focus{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.4)}
 
 /* ── PLAN MODE ── */
-#pmode-plan{display:flex;flex:1;overflow:hidden}
-#pmode-discover{display:none;flex:1;overflow:hidden;flex-direction:column}
+#page-planner.active{display:flex!important;flex-direction:column;height:calc(100dvh - 68px);margin-top:68px;box-sizing:border-box;overflow:hidden;padding-top:0}
+#pmode-discover{display:none;flex-direction:column;flex:1;min-height:0;overflow:hidden}
 #pmode-discover.active{display:flex}
-#pmode-plan.active{display:flex}
 
 /* Activity bar (plan mode) */
-.plan-actbar{display:flex;align-items:center;gap:8px;padding:10px 16px;background:white;border-bottom:1px solid #E2DDD4;flex-shrink:0;overflow-x:auto}
-.plan-actbar::-webkit-scrollbar{height:0}
-.act-chip{display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:50px;border:1.5px solid #E2DDD4;background:white;font-size:12.5px;font-weight:500;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:'Inter',sans-serif;color:#1A1A2E}
-.act-chip:hover{border-color:#1E3161;color:#1E3161}
-.act-chip.active{background:#1E3161;color:white;border-color:#1E3161}
 .act-chip .act-ico{font-size:14px}
 
 /* Plan split layout */
-.plan-split{display:flex;flex:1;overflow:hidden}
-.plan-panel{width:360px;flex-shrink:0;background:white;border-right:1px solid #E2DDD4;display:flex;flex-direction:column;overflow:hidden}
-.plan-panel-header{padding:16px 18px;border-bottom:1px solid #E2DDD4;flex-shrink:0}
-.plan-panel-header h3{font-size:14px;font-weight:700;color:#1E3161;margin-bottom:2px}
-.plan-panel-header p{font-size:12px;color:#6B6B7B}
-.plan-waypoints{flex:1;overflow-y:auto;padding:12px}
-.plan-waypoints::-webkit-scrollbar{width:4px}
-.plan-waypoints::-webkit-scrollbar-thumb{background:#E2DDD4;border-radius:2px}
-.wp-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;margin-bottom:6px;background:#FAF8F2;border:1px solid #E2DDD4;cursor:pointer;transition:all .2s}
 .wp-item:hover{border-color:#1E3161}
 .wp-item.active{border-color:#E8641A;background:#FFF0E6}
-.wp-dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
 .wp-dot.start{background:#22c55e;color:white}
 .wp-dot.end{background:#E8641A;color:white}
 .wp-dot.mid{background:#1E3161;color:white}
-.wp-label{flex:1;font-size:13px;color:#1A1A2E;font-weight:500}
 .wp-label span{display:block;font-size:11px;color:#6B6B7B;font-weight:400}
-.wp-del{background:none;border:none;color:#6B6B7B;cursor:pointer;font-size:16px;padding:2px;transition:color .2s;flex-shrink:0}
 .wp-del:hover{color:#E8641A}
 .wp-add-btn{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;border:1.5px dashed #E2DDD4;background:none;color:#6B6B7B;font-size:13px;cursor:pointer;width:100%;font-family:'Inter',sans-serif;transition:all .2s;margin-bottom:6px}
 .wp-add-btn:hover{border-color:#1E3161;color:#1E3161;background:#F4F6FF}
-.plan-stats{padding:14px 18px;border-top:1px solid #E2DDD4;flex-shrink:0}
-.plan-stats-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px}
-.pstat{text-align:center;padding:10px;background:#FAF8F2;border-radius:10px}
-.pstat-val{font-size:17px;font-weight:700;color:#1E3161}
-.pstat-lbl{font-size:10.5px;color:#6B6B7B;margin-top:2px}
-.plan-route-type{display:flex;gap:6px;margin-bottom:14px}
-.prt-btn{flex:1;padding:8px;border-radius:8px;border:1.5px solid #E2DDD4;background:white;font-size:12px;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;color:#1A1A2E;text-align:center}
 .prt-btn:hover{border-color:#1E3161}
-.prt-btn.active{background:#1E3161;color:white;border-color:#1E3161}
-.plan-actions{display:flex;gap:8px}
-.plan-action-btn{flex:1;padding:11px;border-radius:10px;border:none;font-size:13px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
-.plan-action-btn.primary{background:#E8641A;color:white}
-.plan-action-btn.primary:hover{background:#C4501A}
-.plan-action-btn.secondary{background:#F0EDE4;color:#1E3161}
-.plan-action-btn.secondary:hover{background:#E2DDD4}
 
 /* Map containers */
-#plan-map{flex:1;position:relative;z-index:1}
 #disc-map{flex:1;min-height:0;position:relative;z-index:1}
 
 /* Map click hint */
-.map-hint{position:absolute;top:12px;left:50%;transform:translateX(-50%);background:rgba(30,49,97,.88);color:white;padding:7px 16px;border-radius:50px;font-size:12px;font-weight:500;z-index:400;pointer-events:none;white-space:nowrap;backdrop-filter:blur(4px)}
 
 /* ── DISCOVER MODE ── */
 .disc-filterbar{display:flex;align-items:center;gap:10px;padding:10px 16px;background:white;border-bottom:1px solid #E2DDD4;flex-shrink:0;flex-wrap:wrap}
@@ -322,7 +287,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(249,241,220,
 .disc-count{margin-left:auto;font-size:12.5px;color:#6B6B7B}
 
 /* Discover split */
-.disc-split{display:flex;flex:1;overflow:hidden}
+.disc-split{display:flex;flex:1;min-height:0;overflow:hidden}
 .disc-cards-col{width:380px;flex-shrink:0;overflow-y:auto;background:#FAF8F2;border-right:1px solid #E2DDD4}
 .disc-cards-col::-webkit-scrollbar{width:4px}
 .disc-cards-col::-webkit-scrollbar-thumb{background:#E2DDD4;border-radius:2px}
@@ -364,12 +329,46 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(249,241,220,
 .no-routes{text-align:center;padding:48px 24px;color:#6B6B7B;font-size:14px}
 .no-routes svg{width:48px;height:48px;margin:0 auto 12px;display:block;opacity:.35}
 
+/* GPX Komoot-style track cards */
+#gpx-track-strip{
+  position:absolute;bottom:0;left:0;right:0;z-index:15;
+  overflow-x:auto;overflow-y:hidden;
+  display:flex;gap:10px;padding:12px 16px 16px;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;pointer-events:auto;
+}
+#gpx-track-strip::-webkit-scrollbar{display:none}
+.gpx-card{
+  flex-shrink:0;width:200px;
+  background:white;border-radius:14px;
+  padding:12px 14px 10px;
+  box-shadow:0 4px 18px rgba(0,0,0,.22);
+  cursor:pointer;scroll-snap-align:start;
+  border:2px solid transparent;transition:border-color .2s,box-shadow .2s;
+  pointer-events:auto;
+}
+.gpx-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.28)}
+.gpx-card.gpx-active{border-color:#1E3161;box-shadow:0 6px 24px rgba(30,49,97,.35)}
+.gpx-card-name{font-size:12.5px;font-weight:700;color:#1A1A2E;line-height:1.3;margin-bottom:6px}
+.gpx-card-meta{display:flex;gap:10px;font-size:11px;color:#6B6B7B}
+.gpx-card-meta span{display:flex;align-items:center;gap:3px}
+.gpx-card-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:2px}
+.gpx-card-type{font-size:10px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;
+  color:#E8641A;margin-bottom:4px}
+@media(max-width:899px){
+  #gpx-track-strip{bottom:60px}
+}
+.disc-section-head{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+  color:#6B6B7B;padding:10px 4px 6px;display:flex;align-items:center;gap:6px}
+.disc-section-head::after{content:'';flex:1;height:1px;background:#E2DDD4}
+.rt-card.gpx-rt-card .rt-card-img{height:100px}
+.rt-card.gpx-rt-card .rt-card-img-bg{font-size:2.6rem}
+.rt-card.gpx-rt-card .rt-card-body{padding:10px 14px 10px}
+.rt-card-track-line{height:3px;border-radius:2px;margin:6px 0 2px;opacity:.7}
+.rt-card.highlighted{border-color:#E8641A;box-shadow:0 4px 20px rgba(232,100,26,.22)}
+
 /* Responsive */
 @media(max-width:768px){
-  .plan-panel{width:100%;height:45vh;border-right:none;border-bottom:1px solid #E2DDD4}
-  .plan-split{flex-direction:column}
-  .disc-cards-col{width:100%;height:45vh;border-right:none;border-bottom:1px solid #E2DDD4}
-  .disc-split{flex-direction:column}
   .pm-search-wrap input{width:160px}
   .pmtab{padding:14px 16px;font-size:13px}
 }
@@ -1317,44 +1316,77 @@ footer{background:var(--nv);color:white;padding:68px 32px 28px}
 /* ════════════════════════════════
    PLANNER MOBILE-FIRST LAYOUT
 ════════════════════════════════ */
-.pvt-bar {
   display: none;
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
   background: white; border-top: 1px solid #E2DDD4;
   padding: 10px 20px 14px; gap: 12px;
   safe-area-inset-bottom: env(safe-area-inset-bottom);
 }
-.pvt-btn {
   flex: 1; padding: 11px 16px; border-radius: 12px;
   border: 2px solid #E2DDD4; font-size: 14px; font-weight: 600;
   cursor: pointer; font-family: 'Inter', sans-serif;
   background: white; color: #6B6B7B; transition: all .2s;
 }
-.pvt-btn.active {
   background: #1E3161; color: white; border-color: #1E3161;
 }
 @media (max-width: 899px) {
-  .pvt-bar { display: flex; }
-  #page-planner.active { height: auto !important; padding-bottom: 72px; }
-  .plan-split { flex-direction: column; flex: none; height: auto; }
-  .plan-panel {
-    width: 100%; border-right: none;
-    border-bottom: 1px solid #E2DDD4;
-    height: auto; min-height: 40vh; max-height: 50vh;
+
+  /* Planner page fills viewport on mobile */
+  #page-planner.active {
+    display: flex; flex-direction: column;
+    height: calc(100dvh - 68px); overflow: hidden; padding-bottom: 0;
   }
-  #plan-map { height: 50vh; }
-  .disc-split { flex-direction: column; flex: none; height: auto; }
+  .planner-modebar { flex-shrink: 0; }
+  #pmode-discover { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+
+  /* Plan split: map fills 100%, panel floats as bottom sheet */
+    flex: 1; min-height: 0;
+    position: relative; flex-direction: row;
+  }
+    position: absolute; inset: 0;
+    width: 100% !important; height: 100% !important;
+  }
+    position: absolute; bottom: 0; left: 0; right: 0; z-index: 20;
+    width: 100%; max-height: 68vh; overflow-y: auto;
+    border-right: none; border-top: none;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -6px 24px rgba(30,49,97,.18);
+    transform: translateY(calc(100% - 52px));
+    transition: transform .35s cubic-bezier(.4,0,.2,1);
+    background: white;
+  }
+    content: ''; display: block; width: 40px; height: 4px;
+    background: #C8C2B8; border-radius: 2px;
+    margin: 12px auto 4px; cursor: pointer;
+  }
+
+  /* Discover split: map fills 100%, cards float as bottom sheet */
+  .disc-split {
+    flex: 1; min-height: 0;
+    position: relative; flex-direction: row;
+  }
+  #disc-map {
+    position: absolute; inset: 0;
+    width: 100% !important; height: 100% !important;
+  }
   .disc-cards-col {
-    width: 100%; border-right: none;
-    border-bottom: 1px solid #E2DDD4;
-    height: auto; overflow-y: visible;
+    position: absolute; bottom: 0; left: 0; right: 0; z-index: 20;
+    width: 100%; max-height: 72vh; overflow-y: auto;
+    border-right: none; border-top: none;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -6px 24px rgba(30,49,97,.18);
+    transform: translateY(calc(100% - 52px));
+    transition: transform .35s cubic-bezier(.4,0,.2,1);
+    background: #FAF8F2;
   }
-  #disc-map { height: 55vw; min-height: 280px; }
-  /* mobile show/hide via toggle */
-  .pvt-list-hidden .disc-cards-col,
-  .pvt-list-hidden .plan-panel { display: none; }
-  .pvt-map-hidden #plan-map,
-  .pvt-map-hidden #disc-map { display: none; }
+  .disc-cards-col::before {
+    content: ''; display: block; width: 40px; height: 4px;
+    background: #C8C2B8; border-radius: 2px;
+    margin: 12px auto 4px; cursor: pointer;
+  }
+  .disc-cards-col.sheet-open { transform: translateY(0); }
+
+  /* Override old toggle-based hide */
 }
 
 
@@ -1438,7 +1470,6 @@ footer{background:var(--nv);color:white;padding:68px 32px 28px}
 .disc-chip.active,.disc-chip:hover{background:var(--navy);color:var(--linen);border-color:var(--navy);letter-spacing:2px}
 
 /* Planner activity chips */
-.act-chip{
   display:flex;align-items:center;gap:6px;
   padding:7px 16px;border-radius:2px;border:1px solid var(--slate);
   background:transparent;font-size:11px;font-weight:600;
@@ -1446,7 +1477,6 @@ footer{background:var(--nv);color:white;padding:68px 32px 28px}
   font-family:'Inter',sans-serif;color:var(--navy);
   transition:all 400ms cubic-bezier(0.25,1,0.5,1);
 }
-.act-chip.active,.act-chip:hover{background:var(--navy);color:var(--linen);border-color:var(--navy)}
 
 /* Nav sign-in/login buttons */
 .nav-act .btn-ghost{
@@ -1796,8 +1826,7 @@ if ('serviceWorker' in navigator) {
       <img src="LOGO_PLACEHOLDER" alt="Naarad"/>
       <span>Naarad</span>
     </div>
-    <button class="pmtab active" id="pmtab-plan" onclick="switchPlannerMode('plan')">Plan Route</button>
-    <button class="pmtab" id="pmtab-discover" onclick="switchPlannerMode('discover')">Discover Routes</button>
+    <button class="pmtab active" id="pmtab-discover">Discover Routes</button>
     <div class="pm-spacer"></div>
     <div class="pm-search-wrap" role="search" aria-label="Search heritage sites">
       <svg width="15" height="15" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -1805,62 +1834,8 @@ if ('serviceWorker' in navigator) {
     </div>
   </div>
 
-  <!-- ══ PLAN MODE ══ -->
-  <div id="pmode-plan" class="active">
-
-    <!-- Activity Bar -->
-    <div class="plan-actbar" role="toolbar" aria-label="Activity type">
-      <button class="act-chip active" data-act="heritage-walk" onclick="setActivity(this,'heritage-walk')"><span class="act-ico">🏛️</span> Heritage Walk</button>
-      <button class="act-chip" data-act="temple-trail" onclick="setActivity(this,'temple-trail')"><span class="act-ico">🕌</span> Temple Trail</button>
-      <button class="act-chip" data-act="nature-hike" onclick="setActivity(this,'nature-hike')"><span class="act-ico">🌿</span> Nature Hike</button>
-      <button class="act-chip" data-act="cultural-tour" onclick="setActivity(this,'cultural-tour')"><span class="act-ico">🎭</span> Cultural Tour</button>
-      <button class="act-chip" data-act="cycling" onclick="setActivity(this,'cycling')"><span class="act-ico">🚲</span> Cycling</button>
-      <button class="act-chip" data-act="photography" onclick="setActivity(this,'photography')"><span class="act-ico">📸</span> Photography Route</button>
-    </div>
-
-    <!-- Split: Panel + Map -->
-    <div class="plan-split" id="plan-split">
-
-      <!-- Left Panel -->
-      <div class="plan-panel">
-        <div class="plan-panel-header">
-          <h3>Route Planner</h3>
-          <p>Click the map to add waypoints</p>
-        </div>
-
-        <!-- Waypoints -->
-        <div class="plan-waypoints" id="wp-list" aria-live="polite" aria-label="Waypoints list">
-          <!-- dynamically populated -->
-        </div>
-
-        <!-- Stats -->
-        <div class="plan-stats">
-          <div class="plan-stats-row" aria-live="polite">
-            <div class="pstat"><div class="pstat-val" id="ps-dist">0 km</div><div class="pstat-lbl">Distance</div></div>
-            <div class="pstat"><div class="pstat-val" id="ps-time">0 min</div><div class="pstat-lbl">Est. Time</div></div>
-            <div class="pstat"><div class="pstat-val" id="ps-elev">— m</div><div class="pstat-lbl">Elevation</div></div>
-          </div>
-          <div class="plan-route-type">
-            <button class="prt-btn active" id="prt-rec" onclick="setRouteType(this,'recommended')">Recommended</button>
-            <button class="prt-btn" id="prt-short" onclick="setRouteType(this,'shortest')">Shortest</button>
-            <button class="prt-btn" id="prt-scenic" onclick="setRouteType(this,'scenic')">Scenic</button>
-          </div>
-          <div class="plan-actions">
-            <button class="plan-action-btn secondary" onclick="clearPlanRoute()">Clear</button>
-            <button class="plan-action-btn primary" onclick="savePlanRoute()">Save Route</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Map -->
-      <div id="plan-map">
-        <div class="map-hint" id="plan-map-hint">Click anywhere on the map to add a waypoint</div>
-      </div>
-    </div>
-  </div>
-
   <!-- ══ DISCOVER MODE ══ -->
-  <div id="pmode-discover">
+  <div id="pmode-discover" class="active">
 
     <!-- Filter Bar -->
     <div class="disc-filterbar">
@@ -1882,10 +1857,6 @@ if ('serviceWorker' in navigator) {
     </div>
 
     <!-- Mobile view toggle (shown only on small screens) -->
-    <div class="pvt-bar" id="pvt-bar">
-      <button class="pvt-btn active" id="pvt-list" onclick="setPlannerView('list')">☰ List</button>
-      <button class="pvt-btn" id="pvt-map" onclick="setPlannerView('map')">🗺 Map</button>
-    </div>
 
     <!-- Split: Cards + Map -->
     <div class="disc-split" id="disc-split">
@@ -1894,7 +1865,9 @@ if ('serviceWorker' in navigator) {
           <!-- populated by JS -->
         </div>
       </div>
-      <div id="disc-map"></div>
+      <div id="disc-map">
+        <div id="gpx-track-strip"></div>
+      </div>
     </div>
   </div>
 
@@ -2309,6 +2282,7 @@ const ROUTES = [
   {id:12,name:'Udaipur Lake Palace Circuit',location:'Udaipur, Rajasthan',type:'photography',dist:7.3,time:150,elev:60,diff:'moderate',rating:4.9,reviews:356,color:'#0891B2',emoji:'📸',lat:24.5854,lng:73.6836,
    path:[[24.585,73.683],[24.588,73.688],[24.590,73.685],[24.588,73.680]]}
 ];
+window.NAARAD_ROUTES = ROUTES;
 
 // Gradient backgrounds by type
 const TYPE_GRAD = {
@@ -2334,11 +2308,7 @@ const BADGE_STYLE = {
 };
 
 // ── State ──────────────────────────────────────────────────────────────────
-let planMap = null, discMap = null;
-let planWaypoints = [];
-let planPolyline = null;
-let currentActivity = 'heritage-walk';
-let currentRouteType = 'recommended';
+let discMap = null;
 let discFilterType = 'all';
 let discMaxDist = 200;
 let discMarkers = {};
@@ -2346,221 +2316,6 @@ let highlightedRoute = null;
 let discPolylines = {};
 
 // ── Mode switch ────────────────────────────────────────────────────────────
-window.switchPlannerMode = function(mode) {
-  document.getElementById('pmode-plan').classList.toggle('active', mode==='plan');
-  document.getElementById('pmode-discover').classList.toggle('active', mode==='discover');
-  document.getElementById('pmtab-plan').classList.toggle('active', mode==='plan');
-  document.getElementById('pmtab-discover').classList.toggle('active', mode==='discover');
-
-  if (mode === 'plan' && !planMap) {
-    setTimeout(initPlanMap, 50);
-  } else if (mode === 'discover' && !discMap) {
-    setTimeout(initDiscoverMap, 50);
-  }
-  if (mode === 'discover') renderDiscoverCards();
-};
-
-// ── PLAN MAP ───────────────────────────────────────────────────────────────
-function initPlanMap() {
-  planMap = L.map('plan-map', {zoomControl:false}).setView([20.5937, 78.9629], 5);
-  L.control.zoom({position:'bottomright'}).addTo(planMap);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    maxZoom:18
-  }).addTo(planMap);
-
-  // Add heritage site markers
-  ROUTES.forEach(r => {
-    const ic = L.divIcon({
-      html:`<div style="background:${r.color};width:10px;height:10px;border-radius:50%;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,.4)"></div>`,
-      iconSize:[10,10],iconAnchor:[5,5],className:''
-    });
-    const m = L.marker([r.lat,r.lng], {icon:ic}).addTo(planMap);
-    m.bindPopup(`<div class="lf-popup-title">${r.name}</div><div class="lf-popup-sub">${r.location}</div>
-      <div class="lf-popup-stats">
-        <div class="lf-popup-stat"><strong>${r.dist} km</strong>Distance</div>
-        <div class="lf-popup-stat"><strong>${r.time} min</strong>Duration</div>
-      </div>`);
-  });
-
-  planMap.on('click', function(e) {
-    addWaypoint(e.latlng.lat, e.latlng.lng, null);
-  });
-
-  // Initial empty waypoints
-  renderWaypoints();
-}
-
-function addWaypoint(lat, lng, label) {
-  const lbl = label || reverseGeocodeLabel(lat, lng);
-  const marker = L.marker([lat, lng], {
-    icon: makeWpIcon(planWaypoints.length),
-    draggable: true
-  }).addTo(planMap);
-
-  marker.on('dragend', function(e) {
-    const idx = planWaypoints.findIndex(w => w.marker === marker);
-    if (idx >= 0) {
-      planWaypoints[idx].lat = e.target.getLatLng().lat;
-      planWaypoints[idx].lng = e.target.getLatLng().lng;
-      planWaypoints[idx].label = reverseGeocodeLabel(planWaypoints[idx].lat, planWaypoints[idx].lng);
-      renderWaypoints();
-      updatePolyline();
-      updateStats();
-    }
-  });
-
-  planWaypoints.push({lat, lng, label: lbl, marker});
-  renderWaypoints();
-  updatePolyline();
-  updateStats();
-
-  // Hide hint after first click
-  if (planWaypoints.length === 1) {
-    const hint = document.getElementById('plan-map-hint');
-    if (hint) hint.style.display = 'none';
-  }
-}
-
-function makeWpIcon(idx) {
-  const total = planWaypoints.length;
-  let bg = '#1E3161', letter = String.fromCharCode(65 + idx);
-  if (idx === 0) { bg = '#22c55e'; letter = 'A'; }
-  if (idx === total) { bg = '#E8641A'; letter = String.fromCharCode(65 + idx); }
-  return L.divIcon({
-    html:`<div style="background:${bg};color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;border:2.5px solid white;box-shadow:0 2px 8px rgba(0,0,0,.3)">${letter}</div>`,
-    iconSize:[28,28],iconAnchor:[14,14],className:''
-  });
-}
-
-function reverseGeocodeLabel(lat, lng) {
-  // Simple lat/lng label — in production this would call a geocoder API
-  return `${lat.toFixed(4)}°N, ${lng.toFixed(4)}°E`;
-}
-
-function renderWaypoints() {
-  const list = document.getElementById('wp-list');
-  if (!list) return;
-  let html = '';
-  if (planWaypoints.length === 0) {
-    html = `<div style="text-align:center;padding:32px 16px;color:#6B6B7B;font-size:13px">
-      <div style="font-size:36px;margin-bottom:10px">🗺️</div>
-      Click the map to start building your route
-    </div>`;
-  } else {
-    planWaypoints.forEach((wp, i) => {
-      const isStart = i === 0;
-      const isEnd = i === planWaypoints.length - 1 && planWaypoints.length > 1;
-      const dotClass = isStart ? 'start' : isEnd ? 'end' : 'mid';
-      const letter = String.fromCharCode(65 + i);
-      html += `<div class="wp-item" onclick="panToWaypoint(${i})">
-        <div class="wp-dot ${dotClass}">${letter}</div>
-        <div class="wp-label">${isStart ? 'Start' : isEnd ? 'End' : 'Via Point'}
-          <span>${wp.label}</span>
-        </div>
-        <button class="wp-del" onclick="event.stopPropagation();removeWaypoint(${i})" title="Remove">×</button>
-      </div>`;
-    });
-    if (planWaypoints.length < 10) {
-      html += `<button class="wp-add-btn" onclick="promptAddWaypoint()">+ Add waypoint</button>`;
-    }
-  }
-  list.innerHTML = html;
-
-  // Re-render icons with correct colors
-  planWaypoints.forEach((wp, i) => {
-    if (wp.marker) {
-      const total = planWaypoints.length - 1;
-      let bg = '#1E3161';
-      if (i === 0) bg = '#22c55e';
-      else if (i === total && total > 0) bg = '#E8641A';
-      const letter = String.fromCharCode(65 + i);
-      wp.marker.setIcon(L.divIcon({
-        html:`<div style="background:${bg};color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;border:2.5px solid white;box-shadow:0 2px 8px rgba(0,0,0,.3)">${letter}</div>`,
-        iconSize:[28,28],iconAnchor:[14,14],className:''
-      }));
-    }
-  });
-}
-
-window.panToWaypoint = function(i) {
-  if (planMap && planWaypoints[i]) planMap.panTo([planWaypoints[i].lat, planWaypoints[i].lng]);
-};
-
-window.removeWaypoint = function(i) {
-  if (planWaypoints[i] && planWaypoints[i].marker) planMap.removeLayer(planWaypoints[i].marker);
-  planWaypoints.splice(i, 1);
-  renderWaypoints();
-  updatePolyline();
-  updateStats();
-};
-
-window.promptAddWaypoint = function() {
-  if (planMap) {
-    const hint = document.getElementById('plan-map-hint');
-    if (hint) { hint.textContent = 'Click the map to add the next waypoint'; hint.style.display = 'block'; }
-  }
-};
-
-function updatePolyline() {
-  if (!planMap) return;
-  if (planPolyline) planMap.removeLayer(planPolyline);
-  if (planWaypoints.length >= 2) {
-    const latlngs = planWaypoints.map(w => [w.lat, w.lng]);
-    planPolyline = L.polyline(latlngs, {color:'#E8641A', weight:4, opacity:.8, dashArray:'8,4'}).addTo(planMap);
-    planMap.fitBounds(planPolyline.getBounds(), {padding:[40,40]});
-  }
-}
-
-function updateStats() {
-  let dist = 0;
-  for (let i = 1; i < planWaypoints.length; i++) {
-    dist += haversine(planWaypoints[i-1].lat, planWaypoints[i-1].lng, planWaypoints[i].lat, planWaypoints[i].lng);
-  }
-  const speedKmH = currentActivity === 'cycling' ? 15 : currentActivity === 'nature-hike' ? 3.5 : 4.5;
-  const minutes = dist > 0 ? Math.round((dist / speedKmH) * 60) : 0;
-  const timeStr = minutes >= 60 ? `${Math.floor(minutes/60)}h ${minutes%60}m` : `${minutes} min`;
-  document.getElementById('ps-dist').textContent = dist > 0 ? `${dist.toFixed(1)} km` : '0 km';
-  document.getElementById('ps-time').textContent = dist > 0 ? timeStr : '0 min';
-  document.getElementById('ps-elev').textContent = dist > 0 ? `~${Math.round(dist * 8)} m` : '— m';
-}
-
-function haversine(lat1, lon1, lat2, lon2) {
-  const R = 6371;
-  const dLat = (lat2 - lat1) * Math.PI / 180;
-  const dLon = (lon2 - lon1) * Math.PI / 180;
-  const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)**2;
-  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-}
-
-window.clearPlanRoute = function() {
-  planWaypoints.forEach(w => { if (w.marker) planMap.removeLayer(w.marker); });
-  planWaypoints = [];
-  if (planPolyline) { planMap.removeLayer(planPolyline); planPolyline = null; }
-  renderWaypoints();
-  updateStats();
-  const hint = document.getElementById('plan-map-hint');
-  if (hint) { hint.textContent = 'Click anywhere on the map to add a waypoint'; hint.style.display = 'block'; }
-};
-
-window.savePlanRoute = function() {
-  if (planWaypoints.length < 2) { alert('Add at least 2 waypoints to save a route.'); return; }
-  alert(`Route saved! ${planWaypoints.length} waypoints · ${document.getElementById('ps-dist').textContent} · ${document.getElementById('ps-time').textContent}`);
-};
-
-window.setActivity = function(btn, act) {
-  document.querySelectorAll('.act-chip').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  currentActivity = act;
-  updateStats();
-};
-
-window.setRouteType = function(btn, type) {
-  document.querySelectorAll('.prt-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  currentRouteType = type;
-};
-
 // ── DISCOVER MAP ───────────────────────────────────────────────────────────
 function initDiscoverMap() {
   discMap = L.map('disc-map', {zoomControl:false}).setView([20.5937, 78.9629], 5);
@@ -2572,6 +2327,7 @@ function initDiscoverMap() {
 
   ROUTES.forEach(r => addDiscoverMarker(r));
   renderDiscoverCards();
+  fetchGPXTracks(discMap);
 }
 
 function addDiscoverMarker(r) {
@@ -2595,6 +2351,54 @@ function addDiscoverMarker(r) {
   });
   discMarkers[r.id] = m;
 }
+
+// ── GPX tracks: load pre-baked JSON, draw polylines, add sidebar cards ───────
+window.__gpxTracks = null;
+window.__gpxPolylines = {};
+let activeGPXId = null;
+
+function fetchGPXTracks(map) {
+  // Load both track sets in parallel; GeoJSON routes take priority (they're the real uploaded data)
+  const geoFetch = fetch('/routes/geo-tracks.json').then(r => r.json()).catch(() => ({tracks:[]}));
+  const gpxFetch = fetch('/routes/gpx-tracks.json').then(r => r.json()).catch(() => ({tracks:[]}));
+
+  Promise.all([geoFetch, gpxFetch]).then(([geoData, gpxData]) => {
+    // Offset IDs so they don't collide: geo tracks 1-99, gpx tracks 101+
+    const geoTracks = (geoData.tracks || []);
+    const gpxTracks = (gpxData.tracks || []).map(t => ({...t, id: t.id + 100}));
+
+    window.__gpxTracks = [...geoTracks, ...gpxTracks];
+    window.__gpxPolylines = {};
+
+    window.__gpxTracks.forEach(t => {
+      const poly = L.polyline(t.coords, {color: t.color, weight: 4, opacity: 0.45}).addTo(map);
+      window.__gpxPolylines[t.id] = poly;
+    });
+    renderDiscoverCards();
+  });
+}
+
+window.selectGPXRoute = function(id) {
+  // Reset all GPX polylines and cards
+  Object.entries(window.__gpxPolylines || {}).forEach(([k, poly]) => {
+    poly.setStyle({opacity: 0.35, weight: 4});
+  });
+  document.querySelectorAll('.gpx-rt-card').forEach(c => c.classList.remove('highlighted'));
+
+  // Highlight selected
+  activeGPXId = id;
+  const poly = (window.__gpxPolylines || {})[id];
+  if (poly) {
+    poly.setStyle({opacity: 1, weight: 6});
+    poly.bringToFront();
+    if (discMap) discMap.fitBounds(poly.getBounds(), {padding: [60, 60], animate: true});
+  }
+  const card = document.getElementById('gpx-rt-card-' + id);
+  if (card) {
+    card.classList.add('highlighted');
+    card.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+  }
+};
 
 window.filterDiscover = function(btn, type) {
   document.querySelectorAll('.disc-chip').forEach(b => b.classList.remove('active'));
@@ -2623,40 +2427,73 @@ function renderDiscoverCards() {
   const inner = document.getElementById('disc-cards-inner');
   if (!inner) return;
   const filtered = getFilteredRoutes();
-  document.getElementById('disc-count').textContent = filtered.length + ' routes';
+  const gpxTracks = window.__gpxTracks || [];
+  document.getElementById('disc-count').textContent = (filtered.length + gpxTracks.length) + ' routes';
 
-  if (filtered.length === 0) {
-    inner.innerHTML = `<div class="no-routes">
+  let html = '';
+
+  // ── Uploaded track routes section ──────────────────────────────────
+  if (gpxTracks.length) {
+    html += `<div class="disc-section-head">📍 Chennai · Uploaded Routes</div>`;
+    html += gpxTracks.map(t => {
+      const active = activeGPXId === t.id ? ' highlighted' : '';
+      return `<div class="rt-card gpx-rt-card${active}" id="gpx-rt-card-${t.id}" onclick="selectGPXRoute(${t.id})">
+        <div class="rt-card-img">
+          <div class="rt-card-img-bg" style="background:${t.color}18">${t.icon}</div>
+          <div class="rt-card-badge" style="background:${t.color};color:white">GPX Track</div>
+        </div>
+        <div class="rt-card-body">
+          <div class="rt-card-track-line" style="background:${t.color}"></div>
+          <div class="rt-card-name">${t.name}</div>
+          <div class="rt-card-loc">📍 Chennai, Tamil Nadu</div>
+          <div class="rt-card-stats">
+            <div class="rt-cs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><strong>${t.dist_km} km</strong></div>
+          </div>
+        </div>
+        <div class="rt-card-footer" style="border-top:1px solid ${t.color}22">
+          <span style="background:${t.color};color:white;padding:3px 9px;border-radius:12px;font-size:11px;font-weight:600">View on map →</span>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  // ── Curated India routes section ────────────────────────────────────
+  if (filtered.length) {
+    html += `<div class="disc-section-head">🗺️ Curated Routes · India</div>`;
+    html += filtered.map(r => {
+      const diffClass = r.diff === 'easy' ? 'diff-easy' : r.diff === 'moderate' ? 'diff-moderate' : 'diff-hard';
+      const diffLabel = r.diff.charAt(0).toUpperCase() + r.diff.slice(1);
+      const stars = '★'.repeat(Math.round(r.rating)) + '☆'.repeat(5-Math.round(r.rating));
+      return `<div class="rt-card" id="rt-card-${r.id}" onclick="selectDiscoverRoute(${r.id})">
+        <div class="rt-card-img">
+          <div class="rt-card-img-bg" style="background:${TYPE_GRAD[r.type]}">${r.emoji}</div>
+          <div class="rt-card-badge" style="${BADGE_STYLE[r.type]}">${TYPE_LABEL[r.type]}</div>
+        </div>
+        <div class="rt-card-body">
+          <div class="rt-card-name">${r.name}</div>
+          <div class="rt-card-loc">📍 ${r.location}</div>
+          <div class="rt-card-stats">
+            <div class="rt-cs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><strong>${r.dist} km</strong></div>
+            <div class="rt-cs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><strong>${r.time < 60 ? r.time+'m' : Math.floor(r.time/60)+'h '+(r.time%60 > 0 ? r.time%60+'m' : '')}</strong></div>
+            <div class="rt-cs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-8 4 5 3-4 5 7"/></svg><strong>${r.elev} m</strong></div>
+          </div>
+        </div>
+        <div class="rt-card-footer">
+          <span class="${diffClass}">${diffLabel}</span>
+          <div class="rt-rating"><span style="color:#F59E0B">${stars}</span> <strong>${r.rating}</strong> (${r.reviews})</div>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  if (!html) {
+    html = `<div class="no-routes">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 20H3v-2a4 4 0 014-4h2m7 6h6v-2a4 4 0 00-4-4h-2m-2-4a4 4 0 110-8 4 4 0 010 8z"/></svg>
       No routes match your filters
     </div>`;
-    return;
   }
 
-  inner.innerHTML = filtered.map(r => {
-    const diffClass = r.diff === 'easy' ? 'diff-easy' : r.diff === 'moderate' ? 'diff-moderate' : 'diff-hard';
-    const diffLabel = r.diff.charAt(0).toUpperCase() + r.diff.slice(1);
-    const stars = '★'.repeat(Math.round(r.rating)) + '☆'.repeat(5-Math.round(r.rating));
-    return `<div class="rt-card" id="rt-card-${r.id}" onclick="selectDiscoverRoute(${r.id})">
-      <div class="rt-card-img">
-        <div class="rt-card-img-bg" style="background:${TYPE_GRAD[r.type]}">${r.emoji}</div>
-        <div class="rt-card-badge" style="${BADGE_STYLE[r.type]}">${TYPE_LABEL[r.type]}</div>
-      </div>
-      <div class="rt-card-body">
-        <div class="rt-card-name">${r.name}</div>
-        <div class="rt-card-loc">📍 ${r.location}</div>
-        <div class="rt-card-stats">
-          <div class="rt-cs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><strong>${r.dist} km</strong></div>
-          <div class="rt-cs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><strong>${r.time < 60 ? r.time+'m' : Math.floor(r.time/60)+'h '+(r.time%60 > 0 ? r.time%60+'m' : '')}</strong></div>
-          <div class="rt-cs"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-8 4 5 3-4 5 7"/></svg><strong>${r.elev} m</strong></div>
-        </div>
-      </div>
-      <div class="rt-card-footer">
-        <span class="${diffClass}">${diffLabel}</span>
-        <div class="rt-rating"><span style="color:#F59E0B">${stars}</span> <strong>${r.rating}</strong> (${r.reviews})</div>
-      </div>
-    </div>`;
-  }).join('');
+  inner.innerHTML = html;
 }
 
 window.selectDiscoverRoute = function(id) {
@@ -2708,8 +2545,6 @@ window.geocodePlannerSearch = function() {
   if (!val) return;
   // Find matching route
   const match = ROUTES.find(r => r.name.toLowerCase().includes(val.toLowerCase()) || r.location.toLowerCase().includes(val.toLowerCase()));
-  if (match && planMap) {
-    planMap.setView([match.lat, match.lng], 13);
   } else if (discMap) {
     const m2 = ROUTES.find(r => r.name.toLowerCase().includes(val.toLowerCase()) || r.location.toLowerCase().includes(val.toLowerCase()));
     if (m2) { discMap.setView([m2.lat, m2.lng], 13); selectDiscoverRoute(m2.id); }
@@ -2726,16 +2561,130 @@ document.addEventListener('DOMContentLoaded', function() {
     mutations.forEach(function(m) {
       if (m.attributeName === 'class' && plannerPage.classList.contains('active')) {
         const discActive = document.getElementById('pmode-discover').classList.contains('active');
-        if (!discActive && !planMap) setTimeout(initPlanMap, 80);
         if (discActive && !discMap) setTimeout(initDiscoverMap, 80);
       }
     });
   });
   obs.observe(plannerPage, {attributes: true, attributeFilter: ['class']});
 
-  // Init if already active on load
-  if (plannerPage.classList.contains('active')) setTimeout(initPlanMap, 200);
+  // Init if already active on load — discover is now the default tab
+  if (plannerPage.classList.contains('active')) setTimeout(initDiscoverMap, 200);
 });
+
+// ── GPX TRACKS: Komoot-style swipeable card strip ─────────────────────────
+const GPX_ROUTES = [
+  { file:'adambakkam-velachcheri.gpx',             name:'Adambakkam to Velachcheri',     color:'#16A34A', icon:'🚶' },
+  { file:'chennai.gpx',                             name:'Chennai City Walk',              color:'#1E3161', icon:'🌆' },
+  { file:'iitm-ashtalashmi-temple-chennai.gpx',    name:'IITM to Ashtalakshmi Temple',   color:'#DC2626', icon:'🕌' },
+  { file:'iitm-mercat-reparar-ordinador-aeroport.gpx', name:'IITM Airport Route',        color:'#7C3AED', icon:'✈️' },
+  { file:'velachcheri-mylapore.gpx',               name:'Velachcheri to Mylapore',       color:'#EA580C', icon:'🏛️' },
+  { file:'velachcheri.gpx',                        name:'Velachcheri Trail',             color:'#0891B2', icon:'🌿' },
+  { file:'voltes-pel-barri-taramani-chennai.gpx',  name:'Taramani Walk',                 color:'#DB2777', icon:'🏘️' },
+  { file:'voltes-per-chennai-iitm-lighthouse.gpx', name:'IITM to Marina Lighthouse',    color:'#B45309', icon:'🔦' }
+];
+
+const gpxPolylines = {};
+let activeGpxId = null;
+
+function parseGPX(text) {
+  const doc = new DOMParser().parseFromString(text, 'application/xml');
+  const ns = 'http://www.topografix.com/GPX/1/1';
+  let pts = doc.getElementsByTagNameNS(ns, 'trkpt');
+  if (!pts.length) pts = doc.getElementsByTagName('trkpt');
+  const coords = [];
+  for (let i = 0; i < pts.length; i++) {
+    coords.push([parseFloat(pts[i].getAttribute('lat')), parseFloat(pts[i].getAttribute('lon'))]);
+  }
+  return coords;
+}
+
+function haversineKm(a, b) {
+  const R = 6371, dLat = (b[0]-a[0])*Math.PI/180, dLon = (b[1]-a[1])*Math.PI/180;
+  const s = Math.sin(dLat/2)**2 + Math.cos(a[0]*Math.PI/180)*Math.cos(b[0]*Math.PI/180)*Math.sin(dLon/2)**2;
+  return R * 2 * Math.atan2(Math.sqrt(s), Math.sqrt(1-s));
+}
+
+function loadGPXTracks(map) {
+  const strip = document.getElementById('gpx-track-strip');
+  if (!strip) return;
+  strip.innerHTML = '';
+
+  GPX_ROUTES.forEach((route, idx) => {
+    fetch('/routes/' + route.file)
+      .then(r => r.text())
+      .then(text => {
+        const coords = parseGPX(text);
+        if (!coords.length) return;
+
+        let dist = 0;
+        for (let i = 1; i < coords.length; i++) dist += haversineKm(coords[i-1], coords[i]);
+        route.coords = coords;
+        route.dist = dist;
+
+        const poly = L.polyline(coords, { color: route.color, weight: 4, opacity: 0.5 }).addTo(map);
+        poly.bringToBack();
+        gpxPolylines[idx] = poly;
+
+        const card = document.createElement('div');
+        card.className = 'gpx-card';
+        card.id = 'gpx-card-' + idx;
+        card.innerHTML =
+          `<div class="gpx-card-type">${route.icon} GPX Track</div>` +
+          `<div class="gpx-card-name">${route.name}</div>` +
+          `<div class="gpx-card-meta">` +
+          `<span><span class="gpx-card-dot" style="background:${route.color}"></span>${dist.toFixed(1)} km</span>` +
+          `<span>📍 Chennai</span></div>`;
+        card.addEventListener('click', () => selectGPXTrack(idx, map));
+        strip.appendChild(card);
+      })
+      .catch(e => console.warn('[GPX] Could not load', route.file, e));
+  });
+}
+
+function selectGPXTrack(idx, map) {
+  if (activeGpxId !== null) {
+    const prev = document.getElementById('gpx-card-' + activeGpxId);
+    if (prev) prev.classList.remove('gpx-active');
+    const prevPoly = gpxPolylines[activeGpxId];
+    if (prevPoly) prevPoly.setStyle({ opacity: 0.5, weight: 4 });
+  }
+  activeGpxId = idx;
+  const card = document.getElementById('gpx-card-' + idx);
+  if (card) {
+    card.classList.add('gpx-active');
+    card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
+  const poly = gpxPolylines[idx];
+  if (poly) {
+    poly.setStyle({ opacity: 1, weight: 6 });
+    poly.bringToFront();
+    map.fitBounds(poly.getBounds(), { padding: [52, 52], animate: true });
+  }
+}
+
+// ── MOBILE BOTTOM SHEET TOGGLE ─────────────────────────────────────────────
+function initBottomSheets() {
+  ['.disc-cards-col'].forEach(sel => {
+    const el = document.querySelector(sel);
+    if (!el) return;
+
+    // Tap the handle zone (top 52 px) to expand; a close button collapses
+    el.addEventListener('click', function(e) {
+      if (window.innerWidth > 899) return;
+      const rect = el.getBoundingClientRect();
+      const hitHandle = (e.clientY - rect.top) < 60;
+      if (!el.classList.contains('sheet-open') && hitHandle) {
+        el.classList.add('sheet-open');
+        setTimeout(() => {
+          if (window.discMap) window.discMap.invalidateSize();
+        }, 380);
+      } else if (el.classList.contains('sheet-open') && hitHandle) {
+        el.classList.remove('sheet-open');
+      }
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded', initBottomSheets);
 
 })();
 </script>
@@ -2810,8 +2759,12 @@ function triggerFades(){
 triggerFades();
 
 // ── INITIAL NAV STATE ──
-showPage('home');
+// Don't call showPage('home') here: page-home is already active in HTML,
+// and the remove-then-add cycle breaks IntersectionObserver timing for
+// .fade-up elements that are already in the viewport on boot.
+window.__currentPage = 'home';
 document.getElementById('nb-routes').classList.add('active');
+setTimeout(triggerFades, 50);
 
 // ── SIDEBAR ──
 function toggleSidebar() {
@@ -3851,8 +3804,8 @@ function switchTab(rid, tab, btn) {
    Get them from: https://supabase.com → Project Settings → API
 ══════════════════════════════════════════════ */
 (function() {
-  var SUPABASE_URL      = (typeof __SUPABASE_URL__ !== 'undefined')      ? __SUPABASE_URL__      : 'https://YOUR_PROJECT_ID.supabase.co';
-  var SUPABASE_ANON_KEY = (typeof __SUPABASE_ANON_KEY__ !== 'undefined') ? __SUPABASE_ANON_KEY__ : 'YOUR_ANON_KEY';
+  var SUPABASE_URL      = (typeof __SUPABASE_URL__ !== 'undefined')      ? __SUPABASE_URL__      : 'https://efpkaptocxhevywfqhyt.supabase.co';
+  var SUPABASE_ANON_KEY = (typeof __SUPABASE_ANON_KEY__ !== 'undefined') ? __SUPABASE_ANON_KEY__ : 'sb_publishable_lcLN9lvCn-oVNsI_S_T-9w_LerFA1ms';
 
   var supabase = null;
   try {
@@ -4321,51 +4274,15 @@ function switchTab(rid, tab, btn) {
       .catch(function(err) { callback(err, []); });
   };
 
-  // ── Patch planMap waypoint labelling with async geocoder ──────────────────
-  // Override the reverseGeocodeLabel function used in the planner
+  // Planner search — pan discover map to searched location
   document.addEventListener('DOMContentLoaded', function() {
-    // The planner's addWaypoint calls reverseGeocodeLabel synchronously.
-    // We patch it to start an async call that updates the label after arrival.
-    var _orig = window.reverseGeocodeLabel;
-    window.reverseGeocodeLabel = function(lat, lng) {
-      var placeholder = 'Locating…';
-      // Kick off async call and update label when it returns
-      reverseGeocodeAsync(lat, lng, function(label) {
-        // Find the waypoint with matching lat/lng and update its label
-        if (window.planWaypoints) {
-          var wp = window.planWaypoints.find(function(w) {
-            return Math.abs(w.lat - lat) < 0.0001 && Math.abs(w.lng - lng) < 0.0001;
-          });
-          if (wp) {
-            wp.label = label;
-            if (typeof renderWaypoints === 'function') renderWaypoints();
-          }
-        }
-      });
-      return placeholder;
-    };
-
-    // Patch planner search to use forward geocoder
     window.geocodePlannerSearch = function() {
       var val = document.getElementById('pm-location-input').value.trim();
       if (!val) return;
       forwardGeocode(val, function(err, results) {
-        if (err || !results.length) {
-          // Fall back to route name search
-          var match = (window.__naaradRoutes || []).find(function(r) {
-            return r.name.toLowerCase().includes(val.toLowerCase()) ||
-                   r.location.toLowerCase().includes(val.toLowerCase());
-          });
-          if (match && window.planMap) window.planMap.setView([match.lat, match.lng], 14);
-          return;
-        }
-        var r = results[0];
-        var lat = parseFloat(r.lat), lng = parseFloat(r.lon);
-        var activeMode = document.getElementById('pmode-plan').classList.contains('active') ? 'plan' : 'discover';
-        if (activeMode === 'plan' && window.planMap) {
-          window.planMap.setView([lat, lng], 14);
-        } else if (window.discMap) {
-          window.discMap.setView([lat, lng], 12);
+        if (!err && results.length && window.discMap) {
+          var r = results[0];
+          window.discMap.setView([parseFloat(r.lat), parseFloat(r.lon)], 13);
         }
       });
     };
@@ -4471,7 +4388,6 @@ function switchTab(rid, tab, btn) {
     var chips = null;
     var active = document.activeElement;
     if (!active) return;
-    if (active.closest('.plan-actbar')) {
       chips = Array.from(document.querySelectorAll('.act-chip'));
     } else if (active.closest('.disc-act-chips')) {
       chips = Array.from(document.querySelectorAll('.disc-chip'));
@@ -4506,6 +4422,40 @@ function switchTab(rid, tab, btn) {
 (function() {
 
   // ── Card renderer ────────────────────────────────────────────
+  var ROUTE_IMG = {
+    1:'Images/Hampi.webp', 2:'Images/thanjavur.webp', 3:'Images/IIt_Madras.webp',
+    4:'Images/Mysore Palace.webp', 5:'Images/Varanasi.webp', 6:'Images/Jaipur.webp'
+  };
+  var ROUTE_GRAD = {
+    'heritage-walk':'linear-gradient(135deg,#4C1D95,#7C3AED)',
+    'temple-trail':'linear-gradient(135deg,#7F1D1D,#DC2626)',
+    'nature-hike':'linear-gradient(135deg,#14532D,#16A34A)',
+    'cultural-tour':'linear-gradient(135deg,#7C2D12,#EA580C)',
+    'cycling':'linear-gradient(135deg,#831843,#DB2777)',
+    'photography':'linear-gradient(135deg,#0C4A6E,#0891B2)'
+  };
+
+  function normalizeRoute(r) {
+    var slug = r.slug || r.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+    return {
+      id: r.id,
+      name: r.name,
+      type: r.type,
+      image: r.image || ROUTE_IMG[r.id] || null,
+      grad: ROUTE_GRAD[r.type] || '#1E3161',
+      emoji: r.emoji || '🏛️',
+      price_inr: r.price_inr !== undefined ? r.price_inr : 0,
+      featured: r.featured !== undefined ? r.featured : !!(r.rating && r.rating >= 4.8),
+      tags: r.tags || [r.type],
+      audio_stops: r.audio_stops !== undefined ? r.audio_stops
+        : (r.stops ? r.stops.length : Math.max(3, Math.round((r.dist || r.distance_km || 5) * 1.2))),
+      distance_km: r.distance_km !== undefined ? r.distance_km : r.dist,
+      duration_min: r.duration_min !== undefined ? r.duration_min : r.time,
+      difficulty: r.difficulty || r.diff || 'easy',
+      slug: slug
+    };
+  }
+
   function diffClass(d) {
     return d === 'easy' ? 'diff-easy' : d === 'moderate' ? 'diff-moderate' : 'diff-hard';
   }
@@ -4528,15 +4478,19 @@ function switchTab(rid, tab, btn) {
     return slug.split('-')[0];
   }
 
-  function buildCard(r, isFeat) {
+  function buildCard(rRaw, isFeat) {
+    var r = normalizeRoute(rRaw);
     var card = document.createElement('div');
     card.className = 'swipe-card' + (isFeat ? ' feat' : '');
     card.setAttribute('role', 'listitem');
     card.setAttribute('tabindex', '0');
     var price = r.price_inr === 0 ? 'Free' : '₹' + r.price_inr;
-    var tag = r.featured ? '⭐ Editor's Pick' : (r.tags && r.tags[0] ? r.tags[0] : r.type);
+    var tag = r.featured ? '⭐ Editor\'s Pick' : (r.tags && r.tags[0] ? r.tags[0] : r.type);
+    var imgHtml = r.image
+      ? '<img class="route-img" src="' + r.image + '" alt="' + r.name + '" loading="lazy"/>'
+      : '<div class="route-img" style="background:' + r.grad + ';display:flex;align-items:center;justify-content:center;font-size:3rem">' + r.emoji + '</div>';
     card.innerHTML =
-      '<img class="route-img" src="' + r.image + '" alt="' + r.name + '" loading="lazy"/>' +
+      imgHtml +
       '<span class="route-price">' + price + '</span>' +
       '<div class="route-ov">' +
         '<span class="route-tag">' + tag + '</span>' +
@@ -4617,42 +4571,13 @@ function switchTab(rid, tab, btn) {
   // Hook into routes.json load — defined here, called when data arrives
   window.__onRoutesLoaded = populateTracks;
 
-  // If routes already loaded by another script, call immediately
-  if (window.__naaradRoutes) populateTracks(window.__naaradRoutes);
+  // Populate immediately from inline data; routes.json may enrich later
+  var seedData = window.NAARAD_ROUTES || window.__naaradRoutes;
+  if (seedData) populateTracks(seedData);
 
 })();
 
-/* ── Planner mobile view toggle ───────────────────────────────── */
-window.setPlannerView = function(view) {
-  var isDiscover = document.getElementById('pmode-discover').classList.contains('active');
-  var splitEl = isDiscover ? document.getElementById('disc-split') : document.getElementById('plan-split');
-  var listBtn = document.getElementById('pvt-list');
-  var mapBtn  = document.getElementById('pvt-map');
 
-  if (!splitEl) return;
-  if (view === 'list') {
-    splitEl.classList.remove('pvt-list-hidden');
-    splitEl.classList.add('pvt-map-hidden');
-    if (listBtn) { listBtn.classList.add('active'); mapBtn.classList.remove('active'); }
-  } else {
-    splitEl.classList.remove('pvt-map-hidden');
-    splitEl.classList.add('pvt-list-hidden');
-    if (mapBtn)  { mapBtn.classList.add('active'); listBtn.classList.remove('active'); }
-    // Trigger map resize after reveal
-    setTimeout(function() {
-      if (window.planMap) window.planMap.invalidateSize();
-      if (window.discMap) window.discMap.invalidateSize();
-    }, 100);
-  }
-};
-
-// Show the pvt-bar only when on planner page
-var _origSPRef = window.showPage;
-window.showPage = function(id) {
-  if (_origSPRef) _origSPRef(id);
-  var pvt = document.getElementById('pvt-bar');
-  if (pvt) pvt.style.display = id === 'planner' ? 'flex' : 'none';
-};
 </script>
 </body>
 </html>
