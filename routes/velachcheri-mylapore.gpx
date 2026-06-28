@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx creator="Wikiloc - https://www.wikiloc.com" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+  <metadata>
+    <name>Wikiloc - Velachcheri - Mylapore</name>
+    <link href="https://www.wikiloc.com/train-trails/velachcheri-mylapore-270435703">
+      <text>Velachcheri - Mylapore - Wikiloc on Wikiloc</text>
+    </link>
+    <time>2026-06-21T05:03:06.864Z</time>
+  </metadata>
+  <trk>
+    <name>Velachcheri - Mylapore - Wikiloc</name>
+    <cmt></cmt>
+    <desc></desc>
+    <trkseg>
+      <trkpt lat="12.971527" lon="80.227641">
+        <ele>2.089</ele>
+        <time>2026-06-21T04:42:44.345Z</time>
+      </trkpt>
+      <trkpt lat="12.975389" lon="80.231562">
+        <ele>2.006</ele>
+        <time>2026-06-21T04:44:40.850Z</time>
+      </trkpt>
+      <trkpt lat="12.975671" lon="80.231996">
+        <ele>2.126</ele>
+        <time>2026-06-21T04:44:48.799Z</time>
+      </trkpt>
+      <trkpt lat="12.976696" lon="80.232892">
+        <ele>1.509</ele>
+        <time>2026-06-21T04:45:02.873Z</time>
+      </trkpt>
+      <trkpt lat="12.977480" lon="80.233868">
+        <ele>1.720</ele>
+        <time>2026-06-21T04:45:17.864Z</time>
+      </trkpt>
+      <trkpt lat="12.977985" lon="80.234854">
+        <ele>2.055</ele>
+        <time>2026-06-21T04:45:27.873Z</time>
+      </trkpt>
+      <trkpt lat="12.978293" lon="80.235777">
+        <ele>2.098</ele>
+        <time>2026-06-21T04:45:34.886Z</time>
+      </trkpt>
+      <trkpt lat="12.978566" lon="80.237213">
+        <ele>3.032</ele>
+        <time>2026-06-21T04:45:45.811Z</time>
+      </trkpt>
+      <trkpt lat="12.978858" lon="80.244433">
+        <ele>3.771</ele>
+        <time>2026-06-21T04:47:25.846Z</time>
+      </trkpt>
+      <trkpt lat="12.979131" lon="80.245391">
+        <ele>3.663</ele>
+        <time>2026-06-21T04:47:31.860Z</time>
+      </trkpt>
+      <trkpt lat="12.979594" lon="80.246349">
+        <ele>3.595</ele>
+        <time>2026-06-21T04:47:37.865Z</time>
+      </trkpt>
+      <trkpt lat="12.980705" lon="80.247701">
+        <ele>2.488</ele>
+        <time>2026-06-21T04:47:47.861Z</time>
+      </trkpt>
+      <trkpt lat="12.985119" lon="80.251437">
+        <ele>4.051</ele>
+        <time>2026-06-21T04:48:22.866Z</time>
+      </trkpt>
+      <trkpt lat="12.986372" lon="80.251902">
+        <ele>4.642</ele>
+        <time>2026-06-21T04:48:33.855Z</time>
+      </trkpt>
+      <trkpt lat="12.987342" lon="80.251891">
+        <ele>5.022</ele>
+        <time>2026-06-21T04:48:43.844Z</time>
+      </trkpt>
+      <trkpt lat="12.992525" lon="80.250592">
+        <ele>8.314</ele>
+        <time>2026-06-21T04:50:15.788Z</time>
+      </trkpt>
+      <trkpt lat="12.995093" lon="80.249804">
+        <ele>9.209</ele>
+        <time>2026-06-21T04:50:42.829Z</time>
+      </trkpt>
+      <trkpt lat="12.995611" lon="80.249790">
+        <ele>9.136</ele>
+        <time>2026-06-21T04:50:53.813Z</time>
+      </trkpt>
+      <trkpt lat="13.003682" lon="80.247691">
+        <ele>7.081</ele>
+        <time>2026-06-21T04:52:30.854Z</time>
+      </trkpt>
+      <trkpt lat="13.004743" lon="80.247606">
+        <ele>7.064</ele>
+        <time>2026-06-21T04:52:56.814Z</time>
+      </trkpt>
+      <trkpt lat="13.006390" lon="80.247800">
+        <ele>8.188</ele>
+        <time>2026-06-21T04:53:33.826Z</time>
+      </trkpt>
+      <trkpt lat="13.010283" lon="80.247876">
+        <ele>9.137</ele>
+        <time>2026-06-21T04:53:58.866Z</time>
+      </trkpt>
+      <trkpt lat="13.015098" lon="80.248365">
+        <ele>7.069</ele>
+        <time>2026-06-21T04:55:25.815Z</time>
+      </trkpt>
+      <trkpt lat="13.016392" lon="80.248629">
+        <ele>6.541</ele>
+        <time>2026-06-21T04:55:33.844Z</time>
+      </trkpt>
+      <trkpt lat="13.017454" lon="80.249198">
+        <ele>6.864</ele>
+        <time>2026-06-21T04:55:41.812Z</time>
+      </trkpt>
+      <trkpt lat="13.020326" lon="80.251728">
+        <ele>4.557</ele>
+        <time>2026-06-21T04:56:21.831Z</time>
+      </trkpt>
+      <trkpt lat="13.020336" lon="80.251934">
+        <ele>5.035</ele>
+        <time>2026-06-21T04:56:26.833Z</time>
+      </trkpt>
+      <trkpt lat="13.022726" lon="80.253850">
+        <ele>9.086</ele>
+        <time>2026-06-21T04:57:25.850Z</time>
+      </trkpt>
+      <trkpt lat="13.024569" lon="80.258242">
+        <ele>8.514</ele>
+        <time>2026-06-21T04:57:55.840Z</time>
+      </trkpt>
+      <trkpt lat="13.025081" lon="80.259029">
+        <ele>8.809</ele>
+        <time>2026-06-21T04:58:03.859Z</time>
+      </trkpt>
+      <trkpt lat="13.026083" lon="80.259706">
+        <ele>8.655</ele>
+        <time>2026-06-21T04:58:15.830Z</time>
+      </trkpt>
+      <trkpt lat="13.031599" lon="80.262177">
+        <ele>7.060</ele>
+        <time>2026-06-21T04:59:42.811Z</time>
+      </trkpt>
+      <trkpt lat="13.033388" lon="80.263995">
+        <ele>9.873</ele>
+        <time>2026-06-21T05:00:05.843Z</time>
+      </trkpt>
+      <trkpt lat="13.034225" lon="80.266242">
+        <ele>10.527</ele>
+        <time>2026-06-21T05:00:33.858Z</time>
+      </trkpt>
+      <trkpt lat="13.035298" lon="80.267309">
+        <ele>11.066</ele>
+        <time>2026-06-21T05:03:06.864Z</time>
+      </trkpt>
+    </trkseg>
+  </trk></gpx>
