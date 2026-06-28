@@ -55,8 +55,8 @@
 <meta name="twitter:image" content="https://naarad.io/Images/Hampi.webp"/>
 
 <!-- ── Favicon / Icons ── -->
-<link rel="icon" type="image/png" sizes="32x32" href="cropped_logo.png"/>
-<link rel="apple-touch-icon" href="cropped_logo.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="Images/cropped_logo.png"/>
+<link rel="apple-touch-icon" href="Images/cropped_logo.png"/>
 <link rel="manifest" href="manifest.json"/>
 <meta name="theme-color" content="#1E3161"/>
 <meta name="mobile-web-app-capable" content="yes"/>
@@ -2514,7 +2514,7 @@ function fetchGPXTracks(map) {
     window.__gpxPolylines = {};
 
     window.__gpxTracks.forEach(t => {
-      const poly = L.polyline(t.coords, {color: t.color, weight: 4, opacity: 0.45}).addTo(map);
+      const poly = L.polyline(t.coords, {color: t.color, weight: 4, opacity: 0}).addTo(map);
       window.__gpxPolylines[t.id] = poly;
     });
     renderDiscoverCards();
@@ -2522,13 +2522,19 @@ function fetchGPXTracks(map) {
 }
 
 window.selectGPXRoute = function(id) {
-  // Reset all GPX polylines and cards
-  Object.entries(window.__gpxPolylines || {}).forEach(([k, poly]) => {
-    poly.setStyle({opacity: 0.35, weight: 4});
-  });
+  const isActive = activeGPXId === id;
+
+  // Hide all tracks and deselect all cards
+  Object.values(window.__gpxPolylines || {}).forEach(poly => poly.setStyle({opacity: 0, weight: 4}));
   document.querySelectorAll('.gpx-rt-card').forEach(c => c.classList.remove('highlighted'));
 
-  // Highlight selected
+  if (isActive) {
+    // Toggle off — card was already selected
+    activeGPXId = null;
+    return;
+  }
+
+  // Show selected track
   activeGPXId = id;
   const poly = (window.__gpxPolylines || {})[id];
   if (poly) {
