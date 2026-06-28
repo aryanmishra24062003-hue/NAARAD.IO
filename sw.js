@@ -1,11 +1,11 @@
 /* Naarad Service Worker — Cache-first for static assets, network-first for API */
 
-const CACHE_NAME = 'naarad-v1';
+const CACHE_NAME = 'naarad-v3';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/cropped_logo.png',
+  '/Images/cropped_logo.png',
   '/robots.txt',
   '/Images/Hampi.webp',
   '/Images/Mysore Palace.webp',
@@ -15,7 +15,7 @@ const STATIC_ASSETS = [
   '/Images/IIt_Madras.webp',
 ];
 
-const CDN_CACHE = 'naarad-cdn-v1';
+const CDN_CACHE = 'naarad-cdn-v3';
 const CDN_ORIGINS = [
   'https://fonts.googleapis.com',
   'https://fonts.gstatic.com',
