@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /.git/
+Disallow: /.claude/
+
+Sitemap: https://naarad.io/sitemap.xml
+
+# Crawl rate hint (requests per second)
+Crawl-delay: 2

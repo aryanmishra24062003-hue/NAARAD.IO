@@ -1,0 +1,56 @@
+{
+  "name": "Naarad — Heritage Explorer",
+  "short_name": "Naarad",
+  "description": "India's first AI-powered heritage exploration platform with gamified audio trails and offline maps.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF8F2",
+  "theme_color": "#1E3161",
+  "orientation": "any",
+  "lang": "en-IN",
+  "categories": ["travel", "education", "lifestyle"],
+  "icons": [
+    {
+      "src": "cropped_logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "cropped_logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "Images/Hampi.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "label": "Hampi Heritage Route"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Plan a Route",
+      "short_name": "Planner",
+      "url": "/planner",
+      "icons": [{ "src": "cropped_logo.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Discover Routes",
+      "short_name": "Discover",
+      "url": "/routes",
+      "icons": [{ "src": "cropped_logo.png", "sizes": "96x96" }]
+    }
+  ],
+  "share_target": {
+    "action": "/",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "url": "url"
+    }
+  }
+}
