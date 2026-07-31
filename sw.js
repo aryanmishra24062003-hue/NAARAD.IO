@@ -1,6 +1,6 @@
 /* Naarad Service Worker — Cache-first for static assets, network-first for API */
 
-const CACHE_NAME = 'naarad-v4';
+const CACHE_NAME = 'naarad-v5';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -13,9 +13,14 @@ const STATIC_ASSETS = [
   '/Images/Jaipur.webp',
   '/Images/thanjavur.webp',
   '/Images/IIt_Madras.webp',
+  /* Creator Programme modules — must be cached for offline-first operation */
+  '/creator/creator.css',
+  '/creator/creator.js',
+  '/data/pricing.json',
+  '/data/creator-testimonials.json',
 ];
 
-const CDN_CACHE = 'naarad-cdn-v4';
+const CDN_CACHE = 'naarad-cdn-v5';
 const CDN_ORIGINS = [
   'https://fonts.googleapis.com',
   'https://fonts.gstatic.com',

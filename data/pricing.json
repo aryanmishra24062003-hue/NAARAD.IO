@@ -1,0 +1,60 @@
+{
+  "_note": "Single source of truth for Naarad pricing. Edit here; creator.js updates the Pricing cards and the Terms page reads from this object.",
+  "lastUpdated": "2026-07-31",
+  "tiers": [
+    {
+      "id": "explorer",
+      "name": "Explorer",
+      "price": "Free",
+      "priceMonthly": 0,
+      "pricePer": "forever",
+      "featured": false,
+      "ctaLabel": "Get Started Free",
+      "ctaAction": "handleFreeSignup()",
+      "features": [
+        "1 free heritage route",
+        "Offline maps (basic)",
+        "Audio stories at POIs",
+        "Community access"
+      ]
+    },
+    {
+      "id": "district",
+      "name": "District Pass",
+      "price": "₹49",
+      "priceMonthly": 49,
+      "pricePer": "per heritage corridor",
+      "featured": true,
+      "featuredBadge": "Most Popular",
+      "ctaLabel": "Subscribe — ₹49/mo",
+      "ctaAction": "initRazorpay('explorer')",
+      "features": [
+        "Full corridor access",
+        "All quest routes unlocked",
+        "Complete audio library",
+        "Hidden vantage points",
+        "Yatra Credits earned",
+        "22+ language narration"
+      ]
+    },
+    {
+      "id": "creator",
+      "name": "Creator",
+      "price": "Free",
+      "priceMonthly": 0,
+      "pricePer": "earn as you contribute",
+      "featured": false,
+      "revenueSharePct": 70,
+      "ctaLabel": "Become a Creator",
+      "ctaAction": "showPage('creator')",
+      "features": [
+        "All Explorer features",
+        "Record audio annotations",
+        "Earn Yatra Credits",
+        "AnSI content validation",
+        "70% revenue share per listen"
+      ],
+      "termsDescription": "Free to join. Earn 70% revenue share per listen, paid monthly via UPI."
+    }
+  ]
+}

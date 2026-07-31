@@ -1522,6 +1522,8 @@ footer{background:var(--navy);color:var(--linen)}
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<!-- Creator Programme module styles — scoped to .cr-* classes -->
+<link rel="stylesheet" href="/creator/creator.css"/>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
@@ -1614,7 +1616,7 @@ if ('serviceWorker' in navigator) {
         <h1 class="hero-title">Stop Touring.<br/>Start <span>Traveling.</span></h1>
         <p class="hero-sub">Know A New World Know it with Naarad</p>
         <div class="hero-btns">
-          <button class="btn-hero btn-hor" onclick="showPage('routes')">Explore Routes</button>
+          <button class="btn-hero btn-hor" onclick="showPage('planner')">Explore Routes</button>
           <button class="btn-hero btn-hol" onclick="showPage('planner')">Plan a Journey</button>
         </div>
       </div>
@@ -1705,7 +1707,7 @@ if ('serviceWorker' in navigator) {
         <li><a href="#" onclick="showPage('planner')">Route Planner</a></li>
         <li><a href="#" onclick="showPage('features')">Quest Library</a></li>
         <li><a href="#" onclick="showPage('app')">District Passes</a></li>
-        <li><a href="#" onclick="openModal('signup')">Creator Programme</a></li>
+        <li><a href="#" onclick="showPage('creator')">Creator Programme</a></li>
       </ul></div>
       <div class="foot-col"><h4>Company</h4><ul>
         <li><a href="#" onclick="showPage('updates')">About Naarad</a></li>
@@ -1809,7 +1811,7 @@ if ('serviceWorker' in navigator) {
         <li><a href="#" onclick="showPage('planner')">Route Planner</a></li>
         <li><a href="#" onclick="showPage('features')">Quest Library</a></li>
         <li><a href="#" onclick="showPage('app')">District Passes</a></li>
-        <li><a href="#" onclick="openModal('signup')">Creator Programme</a></li>
+        <li><a href="#" onclick="showPage('creator')">Creator Programme</a></li>
       </ul></div>
       <div class="foot-col"><h4>Company</h4><ul>
         <li><a href="#" onclick="showPage('updates')">About Naarad</a></li>
@@ -1936,10 +1938,46 @@ if ('serviceWorker' in navigator) {
       <div class="feat-card fade-up"><div class="feat-icon">🎙️</div><div class="feat-title">Voice Annotation Engine</div><p class="feat-desc">Visitors contribute crowdsourced vernacular voice data validated by AnSI researchers — building a living language archive while exploring.</p><span class="feat-tag">AnSI Validated</span></div>
       <div class="feat-card fade-up"><div class="feat-icon">🔍</div><div class="feat-title">Cultural Graph Database</div><p class="feat-desc">A proprietary knowledge graph linking language, history, and geography across every heritage site — the intelligence beneath every Naarad journey.</p><span class="feat-tag">AWS · Graph DB</span></div>
       <div class="feat-card fade-up"><div class="feat-icon">♿</div><div class="feat-title">WCAG 2.1 AA Accessible</div><p class="feat-desc">Audio-first navigation for visually impaired users, screen-reader optimised, real-time Indic translation overlays, and high-contrast mode throughout.</p><span class="feat-tag">WCAG 2.1 AA</span></div>
-      <div class="feat-card fade-up"><div class="feat-icon">👻</div><div class="feat-title">Ghost Director Programme</div><p class="feat-desc">Become a creator. Record audio tours, earn Yatra Credits, and shape how future visitors experience your heritage site. Tourists become authors.</p><span class="feat-tag">Creator Economy</span></div>
+      <div class="feat-card fade-up" role="button" tabindex="0" onclick="showPage('creator')" onkeydown="if(event.key==='Enter'||event.key===' '){showPage('creator')}" style="cursor:pointer" aria-label="Ghost Director Programme — click to learn more about becoming a creator"><div class="feat-icon">👻</div><div class="feat-title">Ghost Director Programme</div><p class="feat-desc">Become a creator. Record audio tours, earn Yatra Credits, and shape how future visitors experience your heritage site. Tourists become authors.</p><span class="feat-tag">Creator Economy</span></div>
       <div class="feat-card fade-up"><div class="feat-icon">🏛️</div><div class="feat-title">Institutional Data Pipeline</div><p class="feat-desc">Verified ethnographic and archaeological data feeds directly into Naarad's content graph for verified, peer-reviewed accuracy.</p></div>
     </div>
   </section>
+  <!-- Distribution & Reach strip — beneath Features grid, above Tech Stack -->
+  <section class="cr-distribution-strip" aria-labelledby="cr-dist-h">
+    <div class="container">
+      <span class="sec-tag" style="margin-bottom:12px">Distribution &amp; Reach</span>
+      <h2 class="sec-h" id="cr-dist-h" style="font-size:clamp(22px,3vw,36px);margin-bottom:8px">Where your story gets heard</h2>
+      <p class="sec-sub" style="margin-bottom:32px">Audio tours deploy automatically across every Naarad-enabled channel — offline first, always.</p>
+      <ul class="cr-dist-row" role="list" aria-label="Distribution channels">
+        <li class="cr-dist-item">
+          <span class="cr-dist-icon" aria-hidden="true">📱</span>
+          <span class="cr-dist-label">Naarad App</span>
+          <span class="cr-dist-sub">iOS &amp; Android</span>
+        </li>
+        <li class="cr-dist-item">
+          <span class="cr-dist-icon" aria-hidden="true">📡</span>
+          <span class="cr-dist-label">Geofenced Sites</span>
+          <span class="cr-dist-sub">Auto-triggers on arrival</span>
+        </li>
+        <li class="cr-dist-item">
+          <span class="cr-dist-icon" aria-hidden="true">🏛️</span>
+          <span class="cr-dist-label">ASI Monuments</span>
+          <span class="cr-dist-sub">3,600+ protected sites</span>
+        </li>
+        <li class="cr-dist-item">
+          <span class="cr-dist-icon" aria-hidden="true">🗺️</span>
+          <span class="cr-dist-label">Tourism Corridors</span>
+          <span class="cr-dist-sub">State tourism partnerships</span>
+        </li>
+        <li class="cr-dist-item">
+          <span class="cr-dist-icon" aria-hidden="true">🤝</span>
+          <span class="cr-dist-label">Institutional Partners</span>
+          <span class="cr-dist-sub">AnSI, IITs &amp; museums</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <!-- Tech Stack -->
   <div class="tech-sec">
     <div class="tech-inner">
@@ -1988,7 +2026,7 @@ if ('serviceWorker' in navigator) {
         <li><a href="#" onclick="showPage('planner')">Route Planner</a></li>
         <li><a href="#" onclick="showPage('features')">Quest Library</a></li>
         <li><a href="#" onclick="showPage('app')">District Passes</a></li>
-        <li><a href="#" onclick="openModal('signup')">Creator Programme</a></li>
+        <li><a href="#" onclick="showPage('creator')">Creator Programme</a></li>
       </ul></div>
       <div class="foot-col"><h4>Company</h4><ul>
         <li><a href="#" onclick="showPage('updates')">About Naarad</a></li>
@@ -2076,7 +2114,7 @@ if ('serviceWorker' in navigator) {
         <li><a href="#" onclick="showPage('planner')">Route Planner</a></li>
         <li><a href="#" onclick="showPage('features')">Quest Library</a></li>
         <li><a href="#" onclick="showPage('app')">District Passes</a></li>
-        <li><a href="#" onclick="openModal('signup')">Creator Programme</a></li>
+        <li><a href="#" onclick="showPage('creator')">Creator Programme</a></li>
       </ul></div>
       <div class="foot-col"><h4>Company</h4><ul>
         <li><a href="#" onclick="showPage('updates')">About Naarad</a></li>
@@ -2205,9 +2243,9 @@ if ('serviceWorker' in navigator) {
             <li>Record audio annotations</li>
             <li>Earn Yatra Credits</li>
             <li>AnSI content validation</li>
-            <li>B2B data revenue share</li>
+            <li>70% revenue share per listen</li>
           </ul>
-          <button class="price-btn" onclick="initRazorpay('creator')">Subscribe — ₹199/mo</button>
+          <button class="price-btn" onclick="showPage('creator')">Become a Creator</button>
         </div>
       </div>
     </div>
@@ -2227,7 +2265,7 @@ if ('serviceWorker' in navigator) {
         <li><a href="#" onclick="showPage('planner')">Route Planner</a></li>
         <li><a href="#" onclick="showPage('features')">Quest Library</a></li>
         <li><a href="#" onclick="showPage('app')">District Passes</a></li>
-        <li><a href="#" onclick="openModal('signup')">Creator Programme</a></li>
+        <li><a href="#" onclick="showPage('creator')">Creator Programme</a></li>
       </ul></div>
       <div class="foot-col"><h4>Company</h4><ul>
         <li><a href="#" onclick="showPage('updates')">About Naarad</a></li>
@@ -2251,6 +2289,211 @@ if ('serviceWorker' in navigator) {
   </div>
 </footer>
 </div>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PAGE: CREATOR PROGRAMME
+     Navigation: showPage('creator')
+     Wired from: footer "Creator Programme" links + "Ghost Director" feat-card
+══════════════════════════════════════════════════════════════════ -->
+<div class="page" id="page-creator" role="main">
+
+  <!-- ── Hero banner ── -->
+  <div class="cr-onboarding-hero">
+    <img src="LOGO_PLACEHOLDER" style="height:48px;width:auto;object-fit:contain;margin:0 auto 24px;display:block;opacity:.85" alt="Naarad"/>
+    <span class="sec-tag">Creator Programme</span>
+    <h1 class="sec-h">Become a Narrator</h1>
+    <p class="sec-sub">Your heritage knowledge belongs on Naarad. Three steps. No studio required. Earn every time someone listens.</p>
+    <a href="mailto:creators@naarad.io?subject=I%20want%20to%20become%20a%20Naarad%20Creator&body=Hi%20Naarad%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20Creator%20Programme.%0A%0AName%3A%20%0AHeritage%20site%20I%20know%20about%3A%20%0ALanguages%20I%20speak%3A" class="cr-apply-btn" style="margin:0 auto;display:inline-flex" aria-label="Apply to become a Naarad creator — opens email">Apply to Create →</a>
+  </div>
+
+  <!-- ── Section 1: Become a Narrator — 3-step flow ── -->
+  <section class="sec" id="creator-onboarding" aria-labelledby="cr-onboarding-h">
+    <div class="container">
+      <span class="sec-tag">How it works</span>
+      <h2 class="sec-h" id="cr-onboarding-h">Three steps to publishing</h2>
+      <p class="sec-sub" style="max-width:560px;margin-bottom:56px">From first recording to earning your first Yatra Credit, the whole process takes less than two weeks.</p>
+      <ol class="cr-steps" aria-label="Steps to become a creator">
+        <li class="cr-step fade-up">
+          <div class="cr-step-num" aria-hidden="true">01</div>
+          <span class="cr-step-icon" aria-hidden="true">🎙️</span>
+          <h3 class="cr-step-title">Record Your Story</h3>
+          <p class="cr-step-desc">Speak into any phone. We accept voice memos, WhatsApp audio, or direct uploads. No equipment needed — your knowledge is the content.</p>
+          <span class="cr-step-tag">Any device · Any language</span>
+        </li>
+        <li class="cr-step fade-up">
+          <div class="cr-step-num" aria-hidden="true">02</div>
+          <span class="cr-step-icon" aria-hidden="true">🌐</span>
+          <h3 class="cr-step-title">We Produce &amp; Translate</h3>
+          <p class="cr-step-desc">Naarad's team polishes audio quality and Bhashini AI translates your story into 22+ Indian languages — so a tourist from Tokyo hears your voice in Japanese.</p>
+          <span class="cr-step-tag">Bhashini · AnSI validated</span>
+        </li>
+        <li class="cr-step fade-up">
+          <div class="cr-step-num" aria-hidden="true">03</div>
+          <span class="cr-step-icon" aria-hidden="true">💸</span>
+          <h3 class="cr-step-title">Publish &amp; Earn per Listen</h3>
+          <p class="cr-step-desc">Your story goes live at heritage sites across India. Every time a visitor's phone triggers your audio, Yatra Credits reach your UPI account. No monthly fee — ever.</p>
+          <span class="cr-step-tag">UPI · Yatra Credits · 70% share</span>
+        </li>
+      </ol>
+      <div class="cr-onboarding-cta">
+        <a href="mailto:creators@naarad.io?subject=I%20want%20to%20become%20a%20Naarad%20Creator&body=Hi%20Naarad%20team%2C%0A%0AI%27d%20like%20to%20join%20the%20Creator%20Programme.%0A%0AName%3A%20%0AHeritage%20site%20I%20know%20about%3A%20%0ALanguages%20I%20speak%3A" class="cr-apply-btn" aria-label="Apply to become a Naarad creator — opens email client">Apply to Create →</a>
+        <p class="cr-cta-note">Free to join. Reviewed within 3 business days.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 2: Earnings Calculator ── -->
+  <!-- Lazy-loaded below the fold; all logic is client-side via creator.js -->
+  <section class="sec cr-calc-sec" aria-labelledby="cr-calc-h" style="background:var(--linen)">
+    <div class="container">
+      <span class="sec-tag">Earnings Calculator</span>
+      <h2 class="sec-h" id="cr-calc-h">How much could you earn?</h2>
+      <p class="sec-sub" style="margin-bottom:48px">Adjust the inputs to project your Naarad income. All logic is client-side — no data is sent anywhere.</p>
+      <noscript><p style="border:1px dashed var(--slate);border-radius:12px;padding:24px;font-size:14px;color:var(--txm)">Enable JavaScript to use the interactive earnings calculator. Estimated rate: ₹0.50 per listen at Verified Creator tier.</p></noscript>
+      <div class="cr-calc-grid">
+        <div class="cr-calc-inputs" aria-label="Calculator inputs">
+          <div class="cr-calc-field">
+            <label for="calc-listens" class="cr-calc-label">Estimated listens per month</label>
+            <div class="cr-calc-slider-row">
+              <input type="range" id="calc-listens" class="cr-slider"
+                     min="100" max="10000" step="100" value="1000"
+                     aria-valuemin="100" aria-valuemax="10000" aria-valuenow="1000"
+                     aria-label="Listens per month"/>
+              <output for="calc-listens" class="cr-slider-val" id="calc-listens-val" aria-live="polite">1,000</output>
+            </div>
+            <div class="cr-slider-ticks" aria-hidden="true">
+              <span>100</span><span>2,500</span><span>5,000</span><span>7,500</span><span>10K</span>
+            </div>
+          </div>
+          <div class="cr-calc-field">
+            <label for="calc-tier" class="cr-calc-label">Creator tier</label>
+            <select id="calc-tier" class="cr-select" aria-label="Select creator tier">
+              <option value="emerging">Emerging Creator — ₹0.40/listen</option>
+              <option value="verified" selected>Verified Creator — ₹0.50/listen</option>
+              <option value="heritage">Heritage Expert — ₹0.65/listen</option>
+            </select>
+          </div>
+        </div>
+        <div class="cr-calc-results" aria-live="polite" aria-label="Earnings estimates" aria-atomic="true">
+          <div class="cr-result-card">
+            <div class="cr-result-label">Per-listen rate</div>
+            <div class="cr-result-val" id="calc-per-listen">₹0.50</div>
+          </div>
+          <div class="cr-result-card featured">
+            <div class="cr-result-label">Monthly earnings</div>
+            <div class="cr-result-val" id="calc-monthly">₹500</div>
+          </div>
+          <div class="cr-result-card">
+            <div class="cr-result-label">Annual projection</div>
+            <div class="cr-result-val" id="calc-annual">₹6,000</div>
+          </div>
+        </div>
+      </div>
+      <p class="cr-calc-disclaimer">Estimates based on current Yatra Credits rates. Actual earnings depend on route popularity, listener region, and content quality score. UPI payouts processed monthly for balances above ₹100.</p>
+    </div>
+  </section>
+
+  <!-- ── Section 3: Creator Testimonials ── -->
+  <!-- Carousel fetches /data/creator-testimonials.json; noscript shows plain message -->
+  <section class="sec cr-testimonials-sec" aria-labelledby="cr-testimonials-h">
+    <div class="container">
+      <span class="sec-tag">Creator Stories</span>
+      <h2 class="sec-h" id="cr-testimonials-h">Narrators across India</h2>
+      <p class="sec-sub" style="margin-bottom:48px">From grandmothers in temple towns to historians in Rajput forts — anyone with local knowledge belongs on Naarad.</p>
+      <div class="cr-carousel" id="cr-carousel"
+           role="region"
+           aria-label="Creator testimonials"
+           aria-roledescription="carousel"
+           tabindex="0">
+        <div class="cr-carousel-track" id="cr-carousel-track" role="list" aria-live="polite" aria-atomic="false"></div>
+        <nav class="cr-carousel-controls" aria-label="Testimonial navigation">
+          <button class="cr-carousel-prev" id="cr-prev" aria-label="Previous testimonial">&#8592;</button>
+          <div class="cr-carousel-dots" id="cr-dots" role="tablist" aria-label="Go to testimonial"></div>
+          <button class="cr-carousel-next" id="cr-next" aria-label="Next testimonial">&#8594;</button>
+        </nav>
+      </div>
+      <noscript>
+        <p class="cr-noscript">Creator testimonials require JavaScript to display. <a href="mailto:creators@naarad.io">Email us</a> to hear their stories directly.</p>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- ── Section 4: Creator FAQ ── -->
+  <section class="sec cr-faq-sec" aria-labelledby="cr-faq-h" style="background:var(--linen)">
+    <div class="container">
+      <span class="sec-tag">Creator FAQ</span>
+      <h2 class="sec-h" id="cr-faq-h">Common questions</h2>
+      <p class="sec-sub" style="max-width:560px;margin-bottom:48px">Everything you need to know about earnings, payouts, languages, and your content rights.</p>
+      <dl class="cr-faq" id="cr-faq">
+        <div class="cr-faq-item">
+          <dt><button class="cr-faq-q" aria-expanded="false" aria-controls="faq-panel-0" id="faq-btn-0">How do I get paid? <span class="cr-faq-icon" aria-hidden="true">+</span></button></dt>
+          <dd class="cr-faq-a" id="faq-panel-0" role="region" aria-labelledby="faq-btn-0" hidden>Yatra Credits accumulate in your creator dashboard and convert to INR at a 1:1 rate. We process UPI payouts on the 1st of each month for balances above ₹100. No minimum withdrawal penalty ever applies.</dd>
+        </div>
+        <div class="cr-faq-item">
+          <dt><button class="cr-faq-q" aria-expanded="false" aria-controls="faq-panel-1" id="faq-btn-1">What revenue share do I receive? <span class="cr-faq-icon" aria-hidden="true">+</span></button></dt>
+          <dd class="cr-faq-a" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1" hidden>Verified Creators receive 70% of the per-listen revenue at ₹0.50 per play. Emerging Creators start at 60% (₹0.40/listen) and automatically upgrade to Verified after 50 published stories. Heritage Expert tier earns 80% at ₹0.65/listen.</dd>
+        </div>
+        <div class="cr-faq-item">
+          <dt><button class="cr-faq-q" aria-expanded="false" aria-controls="faq-panel-2" id="faq-btn-2">Which languages can I record in? <span class="cr-faq-icon" aria-hidden="true">+</span></button></dt>
+          <dd class="cr-faq-a" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2" hidden>Any of India's 22 scheduled languages — and English. You record in your native tongue; Bhashini handles translation into all other supported languages. The more regional your language, the rarer and more valuable your content is to tourists visiting that site.</dd>
+        </div>
+        <div class="cr-faq-item">
+          <dt><button class="cr-faq-q" aria-expanded="false" aria-controls="faq-panel-3" id="faq-btn-3">Who owns the content I create? <span class="cr-faq-icon" aria-hidden="true">+</span></button></dt>
+          <dd class="cr-faq-a" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3" hidden>You retain full ownership of your recordings. Naarad holds a non-exclusive licence to distribute your audio on the platform. You can withdraw content at any time from your dashboard. We will never sell your raw recordings to third parties without your written consent.</dd>
+        </div>
+        <div class="cr-faq-item">
+          <dt><button class="cr-faq-q" aria-expanded="false" aria-controls="faq-panel-4" id="faq-btn-4">How long does content review take? <span class="cr-faq-icon" aria-hidden="true">+</span></button></dt>
+          <dd class="cr-faq-a" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4" hidden>AnSI-partnered reviewers check heritage accuracy within 3–5 business days. Audio production (noise removal, translation) takes an additional 2–3 days. You will receive an email notification when your story goes live and is earning.</dd>
+        </div>
+        <div class="cr-faq-item">
+          <dt><button class="cr-faq-q" aria-expanded="false" aria-controls="faq-panel-5" id="faq-btn-5">Can institutions or academics join as creators? <span class="cr-faq-icon" aria-hidden="true">+</span></button></dt>
+          <dd class="cr-faq-a" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5" hidden>Yes. Universities, archaeological departments, and cultural trusts can apply for institutional creator accounts with custom revenue arrangements and co-branding. Contact <a href="mailto:partners@naarad.io">partners@naarad.io</a>.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ── Page footer (same template as all other pages) ── -->
+  <footer>
+  <div class="foot-in">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <h3><img src="LOGO_PLACEHOLDER" class="foot-brand-logo" alt=""/>Naarad</h3>
+        <p>The Navigational AI Analytics Research &amp; Development Initiative. Transforming tourists from consumers into creators across India's heritage corridors.</p>
+        <div class="foot-social">
+          <a href="https://twitter.com/naarad_io" class="fsb" target="_blank" rel="noopener" aria-label="X / Twitter">𝕏</a><a href="https://linkedin.com/company/naarad-io" class="fsb" target="_blank" rel="noopener" aria-label="LinkedIn">in</a><a href="https://youtube.com/@naaradio" class="fsb" target="_blank" rel="noopener" aria-label="YouTube">▶</a><a href="https://instagram.com/naarad.io" class="fsb" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Explore</h4><ul>
+        <li><a href="#" onclick="showPage('routes')">Heritage Routes</a></li>
+        <li><a href="#" onclick="showPage('planner')">Route Planner</a></li>
+        <li><a href="#" onclick="showPage('features')">Quest Library</a></li>
+        <li><a href="#" onclick="showPage('app')">District Passes</a></li>
+        <li><a href="#" onclick="showPage('creator')">Creator Programme</a></li>
+      </ul></div>
+      <div class="foot-col"><h4>Company</h4><ul>
+        <li><a href="#" onclick="showPage('updates')">About Naarad</a></li>
+        <li><a href="#" onclick="showPage('updates')">Partnerships</a></li>
+        <li><a href="#" onclick="showPage('updates')">FCDO Grant</a></li>
+        <li><a href="#" onclick="showPage('updates')">Press</a></li>
+        <li><a href="mailto:careers@naarad.io">Careers</a></li>
+      </ul></div>
+      <div class="foot-col"><h4>Support</h4><ul>
+        <li><a href="mailto:support@naarad.io">Help Centre</a></li>
+        <li><a href="#" onclick="showPage('accessibility');return false">Accessibility</a></li>
+        <li><a href="#" onclick="showPage('privacy');return false">Privacy Policy</a></li>
+        <li><a href="#" onclick="showPage('terms');return false">Terms of Use</a></li>
+        <li><a href="mailto:hello@naarad.io">Contact Us</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bot">
+      <p>© 2026 NAARAD — Navigational AI Analytics Research &amp; Development Initiative. Built by Aryan Mishra.</p>
+      <span class="foot-tagline">Stop Touring. Start Traveling.</span>
+    </div>
+  </div>
+  </footer>
+</div>
+<!-- end #page-creator -->
 
 <!-- ══════════ MODAL: LOGIN / SIGNUP ══════════ -->
 <div class="modal-bg" id="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-modal-title">
@@ -2873,7 +3116,7 @@ const LOGO_SRC = "data:image/png;base64," + LOGO_B64;
 document.querySelectorAll('img[src="LOGO_PLACEHOLDER"]').forEach(img => { img.src = LOGO_SRC; });
 
 // ── PAGE ROUTER ──
-const pages = ['home','routes','planner','features','updates','about','app','privacy','terms','accessibility'];
+const pages = ['home','routes','planner','features','updates','about','app','creator','privacy','terms','accessibility'];
 function showPage(id) {
   window.__currentPage = id;
   pages.forEach(p => {
@@ -3859,7 +4102,7 @@ function switchTab(rid, tab, btn) {
       <ul>
         <li><strong>Free tier:</strong> 3 heritage trails per month.</li>
         <li><strong>Explorer (₹49/month):</strong> Unlimited trails, offline maps, quest unlocks.</li>
-        <li><strong>Creator (₹199/month):</strong> All Explorer features plus route creation tools and 70% revenue share.</li>
+        <li><strong>Creator:</strong> Free to join. Earn 70% revenue share per listen, paid monthly via UPI. No subscription fee.</li>
         <li>Subscriptions auto-renew. Cancel anytime. No refunds for partial months.</li>
       </ul>
       <h2>5. Intellectual Property</h2>
@@ -4757,5 +5000,7 @@ function switchTab(rid, tab, btn) {
 
 
 </script>
+<!-- Creator Programme module JS — lazy-loaded, dependency-free -->
+<script src="/creator/creator.js" defer></script>
 </body>
 </html>

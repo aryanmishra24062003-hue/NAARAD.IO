@@ -1,0 +1,45 @@
+{
+  "_note": "Edit this file to update creator testimonials. Each entry needs: id, name, location, quote, tier, avgMonthlyListens.",
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Meera Krishnaswamy",
+      "location": "Chennai, Tamil Nadu",
+      "quote": "I recorded my grandmother's oral histories about the Brihadeeswarar temple in Tamil. A year later, tourists from across the world hear her voice at the site. Nothing prepared me for how moving that would feel.",
+      "tier": "Heritage Expert",
+      "avgMonthlyListens": 4800
+    },
+    {
+      "id": 2,
+      "name": "Dr. Rajendra Shastri",
+      "location": "Varanasi, Uttar Pradesh",
+      "quote": "I am a Sanskrit scholar who spent forty years studying Ghat rituals. Naarad gave me a way to share that knowledge with every visitor — not just my students. My first month I earned ₹3,200.",
+      "tier": "Verified Creator",
+      "avgMonthlyListens": 6400
+    },
+    {
+      "id": 3,
+      "name": "Priya Nair",
+      "location": "Hampi, Karnataka",
+      "quote": "As a local guide I was tired of being cut out by apps. Naarad actually pays me for my expertise. I record tours in Kannada, Tulu, and English — each version earns separately.",
+      "tier": "Verified Creator",
+      "avgMonthlyListens": 3100
+    },
+    {
+      "id": 4,
+      "name": "Aashif Qureshi",
+      "location": "Agra, Uttar Pradesh",
+      "quote": "My family has maintained Mughal-era caravanserais for generations. The stories I carry existed only in our family's memory. Now they reach everyone who walks the Taj corridor.",
+      "tier": "Emerging Creator",
+      "avgMonthlyListens": 1900
+    },
+    {
+      "id": 5,
+      "name": "Prof. Sunita Venkataraman",
+      "location": "Thanjavur, Tamil Nadu",
+      "quote": "I teach Bharatanatyam history at university. My Naarad audio tours on the Brihadeeswarar inscriptions have been cited in two research papers by scholars who first heard them on-site.",
+      "tier": "Heritage Expert",
+      "avgMonthlyListens": 5200
+    }
+  ]
+}
