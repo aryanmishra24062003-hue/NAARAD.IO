@@ -229,7 +229,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(249,241,220,
 .filter-btn:hover,.filter-btn.active{background:var(--or);color:white;border-color:var(--or)}
 
 /* ════════════════════════════════
-   PAGE 2 — PLANNER (Komoot-style)
+  PAGE 2 — PLANNER
 ════════════════════════════════ */
 
 /* Shared planner layout */
@@ -343,7 +343,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(249,241,220,
 .no-routes{text-align:center;padding:48px 24px;color:#6B6B7B;font-size:14px}
 .no-routes svg{width:48px;height:48px;margin:0 auto 12px;display:block;opacity:.35}
 
-/* GPX Komoot-style track cards */
+
 #gpx-track-strip{
   position:absolute;bottom:0;left:0;right:0;z-index:15;
   overflow-x:auto;overflow-y:hidden;
@@ -1237,8 +1237,7 @@ footer{background:var(--nv);color:white;padding:68px 32px 28px}
 }
 .rp-edit-btn:hover { background: var(--bd); }
 
-/* ════════════════════════════════
-   KOMOOT-STYLE ROUTE SWIPE CARDS
+/* ═══════════════════════════════
 ════════════════════════════════ */
 .routes-swipe-wrap { padding: 0 0 8px; }
 .routes-swipe-track {
@@ -2498,20 +2497,6 @@ if ('serviceWorker' in navigator) {
           <div class="about-name">Aryan Mishra</div>
           <a class="about-linkedin" href="https://www.linkedin.com/in/aryan-mishra-iitm?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" aria-label="View Aryan Mishra on LinkedIn">LinkedIn <span aria-hidden="true">↗</span></a>
           <div class="about-copy">Aryan Mishra is the Founder and CEO of NAARAD, leading the company’s vision across contextual AI, accessibility, and India-first computing systems.<br><br>A Data Science student at the Indian Institute of Technology Madras, his work focuses on building intelligence platforms designed for real-world infrastructure, operational environments, and adaptive human interaction. Through collaborations connected with the Energy Consortium at IIT Madras, he brings a systems-oriented perspective toward institutional compliance, interoperability, and ecosystem-level technological synergy.<br><br>Influenced by industry-facing ecosystems including CII-linked logistics and supply-chain networks, Aryan’s approach combines future-forward product thinking with practical deployment realities across India’s diverse infrastructural landscape.<br><br>At NAARAD, he focuses on creating context-aware interfaces and AI-native systems optimized for accessibility, operational clarity, and India-first user experience design.</div>
-        </div>
-        <div class="about-card">
-          <img class="about-card-img" src="Images/Himanshu%20jha.webp" alt="Himanshu Jha"/>
-          <span class="about-role">Data Advisor</span>
-          <div class="about-name">Himanshu Jha</div>
-          <a class="about-linkedin" href="https://www.linkedin.com/in/himanshujha?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" aria-label="View Himanshu Jha on LinkedIn">LinkedIn <span aria-hidden="true">↗</span></a>
-          <div class="about-copy">Himanshu Jha leads Data and Intelligence Systems at NAARAD, bringing extensive experience in enterprise analytics, AI strategy, customer intelligence, and large-scale digital transformation.<br><br>Over the course of his career, he has led data organizations responsible for building scalable machine learning systems, analytics platforms, and decision-support infrastructures across digital-first enterprises. His expertise spans predictive intelligence, data architecture, operational analytics, and enterprise AI adoption.<br><br>At NAARAD, Himanshu oversees the intelligence backbone powering contextual reasoning and adaptive environmental understanding. His work focuses on transforming fragmented operational, spatial, and behavioral signals into structured, actionable intelligence systems capable of scaling across complex real-world environments.<br><br>He plays a key role in shaping the company’s long-term AI roadmap and ensuring that NAARAD’s intelligence systems remain robust, adaptive, and enterprise-ready.</div>
-        </div>
-        <div class="about-card">
-          <img class="about-card-img" src="Images/Sandeep%20Mishra.webp" alt="Sandeep Mishra"/>
-          <span class="about-role">Product Advisor</span>
-          <div class="about-name">Sandeep Mishra</div>
-          <a class="about-linkedin" href="https://www.linkedin.com/in/sandeepmishra-pm?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" aria-label="View Sandeep Mishra on LinkedIn">LinkedIn <span aria-hidden="true">↗</span></a>
-          <div class="about-copy">Sandeep Mishra leads Product Strategy and User Experience at NAARAD, bringing deep experience across enterprise products, operational systems, fintech platforms, and digital transformation initiatives.<br><br>His expertise lies in translating sophisticated technological capabilities into intuitive and deployable user experiences. Throughout his career, he has worked across product strategy, ecosystem design, customer workflows, and platform scaling — helping organizations bridge technological complexity with operational usability.<br><br>At NAARAD, Sandeep focuses on designing interaction systems optimized for contextual assistance, accessibility, and real-world deployment across diverse infrastructural environments.<br><br>His work ensures that NAARAD’s intelligence systems remain seamless, scalable, and deeply human-centered.</div>
         </div>
       </div>
       <div class="about-philosophy">
@@ -3812,7 +3797,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (plannerPage.classList.contains('active')) setTimeout(initDiscoverMap, 200);
 });
 
-// ── GPX TRACKS: Komoot-style swipeable card strip ─────────────────────────
+// GPX route definitions
 const GPX_ROUTES = [
   { file:'adambakkam-velachcheri.gpx',             name:'Adambakkam to Velachcheri',     color:'#16A34A', icon:'🚶' },
   { file:'chennai.gpx',                             name:'Chennai City Walk',              color:'#1E3161', icon:'🌆' },
@@ -5690,7 +5675,7 @@ function switchTab(rid, tab, btn) {
 
 <script>
 /* ══════════════════════════════════════════════
-   KOMOOT-STYLE ROUTE SWIPE CARDS
+
    Builds card tracks from routes.json data
 ══════════════════════════════════════════════ */
 (function() {
