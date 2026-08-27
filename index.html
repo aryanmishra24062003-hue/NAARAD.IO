@@ -5219,7 +5219,7 @@ function switchTab(rid, tab, btn) {
   }
 
   // ── Session restore on load ───────────────────────────────────────────────
-  document.addEventListener('DOMContentLoaded', function() {
+  function initUrlPage() {
     var storedUser = getStoredUser();
     if (storedUser) updateNavForAuth(storedUser);
     // Also re-check with live Supabase session
@@ -5249,7 +5249,12 @@ function switchTab(rid, tab, btn) {
       clearAuthMessages();
       if (_origOpenModal) _origOpenModal(tab);
     };
-  });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initUrlPage);
+  } else {
+    initUrlPage();
+  }
 })();
 </script>
 
@@ -5325,9 +5330,10 @@ function switchTab(rid, tab, btn) {
   });
 
   // On initial load, parse URL and show the correct page
-  document.addEventListener('DOMContentLoaded', function() {
+  function initUrlPage() {
     var path = window.location.pathname.replace(/\/$/, '') || '/';
-    var page = PATH_TO_PAGE[path] || 'home';
+    var fallbackPage = new URLSearchParams(window.location.search).get('page');
+    var page = fallbackPage || PATH_TO_PAGE[path] || 'home';
     if (page !== 'home') {
       // Replace current state so Back goes somewhere sensible
       history.replaceState({ page: page }, '', window.location.href);
@@ -5335,7 +5341,12 @@ function switchTab(rid, tab, btn) {
     } else {
       history.replaceState({ page: 'home' }, '', window.location.href);
     }
-  });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initUrlPage);
+  } else {
+    initUrlPage();
+  }
 })();
 </script>
 
